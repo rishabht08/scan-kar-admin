@@ -1,0 +1,19 @@
+/**=====================
+    89. Rating CSS start
+==========================**/
+.rating {
+    align-items: center;
+    span {
+        .fa {
+            color: $primary-color;
+        }
+        span {
+            span {
+                color: $primary-color;
+            }
+        }
+    }
+}
+/**=====================
+    89. Rating CSS Ends
+==========================**/

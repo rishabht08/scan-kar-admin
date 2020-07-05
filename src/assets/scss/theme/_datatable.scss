@@ -1,0 +1,128 @@
+/**=====================
+    30. Data-table CSS Start
+==========================**/
+.product-table{
+  th{
+    &:last-child{
+      min-width: 120px;
+    }
+  }
+  h6{
+    font-weight: 600;
+    color: $dark-color;
+  }
+}
+.rdt_Table {
+  border: 1px solid rgba($black,.1);
+}
+.rdt_TableCol {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
+.rdt_TableHeader {
+  height: auto;
+  line-height: unset;
+  background: $transparent-color;
+}
+.ezWsxJ {
+  background-color: rgba($primary-color, 0.05) !important;
+}
+
+.support-table {
+  .rdt_TableHeader {
+    display: none;
+  }
+  .gOLUdK {
+    .jiOqgz {
+      .rdt_Table {
+        .rdt_TableBody {
+          .rdt_TableCell {
+            img {
+              border-radius: 100%;
+            }
+            &:nth-child(5) {
+             > div {
+                width: 100%;
+             }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.hfTtVC {
+  min-width: 50px;
+}
+.MuiPaper-root, .MUIDataTableHeadCell-fixedHeaderCommon-172, .MUIDataTableSelectCell-fixedHeaderCommon-137 {
+  background-color: $transparent-color !important;
+}
+.MuiPaper-elevation4 {
+  box-shadow: none !important;
+  border: 1px solid rgba($black, 0.1);
+  .MuiTablePagination-root {
+    border-bottom: none;
+  }
+  .MUIDataTableHeadCell-sortLabelRoot-179 {
+    height: auto;
+  }
+  table {
+    tbody {
+      tr {
+        td {
+          img {
+            border-radius: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+.MuiPaper-elevation1 {
+  box-shadow: none !important;
+  border-bottom: 1px solid rgba($black, 0.1);
+}
+.MuiCheckbox-colorPrimary {
+  &.Mui-checked {
+    color: $primary-color !important;
+  }
+}
+.MuiToolbar-gutters {
+  button {
+    &:hover {
+      color: $primary-color !important;
+    }
+  }
+}
+.MuiPopover-paper {
+  background-color: $white !important;
+}
+.MuiInput-underline {
+  &:after {
+    border-bottom: 2px solid $primary-color !important;
+  }
+}
+.MUIDataTableSelectCell-fixedHeaderCommon-137 {
+  z-index: 7 !important;
+}
+
+@media (max-width: 959px) {
+  .MuiTableCell-root {
+    border-bottom: none !important;
+    padding: 6px !important;
+    height: auto !important;
+  }
+  .MUIDataTableBodyCell-stackedCommon-198 {
+    height: auto !important;
+  }
+  .MUIDataTableBodyRow-responsiveStacked-195 {
+    border-left:  none !important;
+    border-right: none !important;
+  }
+  .MUIDataTableBodyCell-cellStackedSmall-121 {
+    width: 35% !important;
+  }
+}
+/**=====================
+     30. Data-table CSS Ends
+==========================**/

@@ -1,0 +1,69 @@
+@import "~bootstrap-scss/bootstrap.scss";
+@import 'color.scss';
+@import 'themify.scss';
+@import "material-design-icon.scss";
+@import 'typicon-icon.scss';
+@import 'pe7-icon.scss';
+@import 'ionic-icon.scss';
+@import 'simple-line-icon.scss';
+@import 'whether-icon/whether-icon';
+@import "flag-icon/flag-icon-base";
+@import "flag-icon/flag-icon-more";
+@import "flag-icon/flag-icon-list";
+@import 'icoicon/icons';
+@import 'font-awesome.scss';
+
+// Toastify
+@import "~react-toastify/dist/ReactToastify.css";
+
+//  calendar
+@import "~react-big-calendar/lib/sass/styles.scss";
+
+@import "~sweetalert2/src/sweetalert2.scss";
+@import "~@fullcalendar/core/main.css";
+@import "~@fullcalendar/daygrid/main.css";
+@import "~@fullcalendar/timegrid/main.css";
+
+// range slider 
+@import "~react-input-range/lib/css/index.css";
+
+//  Dropzone
+@import "~react-dropzone-uploader/dist/styles.css";
+
+// Datepicker
+@import "~react-datepicker/dist/react-datepicker.css";
+
+// Timepicker
+@import '~react-times/css/material/default.css';
+@import '~react-times/css/classic/default.css';
+
+// input-range
+@import "~react-input-range/lib/css/index.css";
+
+// Typeahead
+@import "~react-bootstrap-typeahead/css/Typeahead.css";
+
+// ImageCrop
+@import '~react-image-crop/dist/ReactCrop.css';
+
+//  Timeline
+@import "~react-vertical-timeline-component/style.min.css";
+
+// chat emoji 
+@import "~emoji-mart/css/emoji-mart.css";
+
+// Print
+@import "./print.scss";
+
+// Mde EDitor
+@import  "~easymde/dist/easymde.min.css";
+
+// Map 
+@import  "~leaflet/dist/leaflet.css";
+
+
+@import '~react-image-lightbox/style.css';
+
+//  Slick Slider
+@import "./slick.scss";
+@import "./slick-theme.scss";

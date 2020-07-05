@@ -1,0 +1,131 @@
+{
+  "name": "creative",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "",
+  "dependencies": {
+    "@fullcalendar/interaction": "^4.4.0",
+    "@fullcalendar/react": "^4.4.0",
+    "@fullcalendar/timegrid": "^4.4.0",
+    "@lourenci/react-kanban": "^1.1.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/googlemaps": "^3.39.6",
+    "@types/markerclustererplus": "^2.1.33",
+    "ace-builds": "^1.4.9",
+    "apexcharts": "^3.15.2",
+    "axios": "^0.19.2",
+    "body-scroll-lock": "^3.0.1",
+    "bootstrap-scss": "^4.5.0",
+    "chart.js": "^2.9.3",
+    "chartist": "^0.10.1",
+    "chartjs-plugin-datalabels": "^0.7.0",
+    "classnames": "^2.2.6",
+    "emoji-mart": "^3.0.0",
+    "feather-icons": "^4.26.0",
+    "firebase": "^7.14.0",
+    "google-maps-react": "^2.0.2",
+    "knob": "^1.1.0",
+    "leaflet": "^1.6.0",
+    "lodash": "^4.17.15",
+    "node-sass": "^4.13.0",
+    "react-ace": "^8.1.0",
+    "react-apexcharts": "^1.3.6",
+    "react-big-calendar": "^0.24.1",
+    "react-bootstrap": "^1.0.1",
+    "react-bootstrap-typeahead": "^5.0.0-alpha.1",
+    "react-calendar": "^3.0.1",
+    "react-chartist": "^0.14.3",
+    "react-chartjs-2": "^2.8.0",
+    "react-ckeditor-component": "^1.1.0",
+    "react-clock": "^2.4.0",
+    "react-copy-to-clipboard": "^5.0.2",
+    "react-countdown": "^2.1.2",
+    "react-countup": "^4.3.3",
+    "react-data-table-component": "^6.7.1",
+    "react-datepicker": "^2.11.0",
+    "react-dragula": "^1.1.17",
+    "react-dropzone-uploader": "^2.11.0",
+    "react-feather": "^2.0.3",
+    "react-geocode": "^0.2.1",
+    "react-google-charts": "^3.0.15",
+    "react-google-maps": "^9.4.5",
+    "react-hook-form": "^5.1.3",
+    "react-image-crop": "^8.5.0",
+    "react-image-lightbox": "^5.1.1",
+    "react-images-upload": "^1.2.8",
+    "react-input-range": "^1.3.0",
+    "react-leaflet": "^2.6.3",
+    "react-light-accordion": "^0.1.4",
+    "react-masonry-css": "^1.0.14",
+    "react-rating": "^2.0.4",
+    "react-ratings-declarative": "^3.4.1",
+    "react-redux": "^7.1.3",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.1.2",
+    "react-scrollbar": "^0.5.6",
+    "react-simplemde-editor": "^4.1.0",
+    "react-slick": "^0.25.2",
+    "react-sparklines": "^1.7.0",
+    "react-stepzilla": "^6.0.2",
+    "react-times": "^3.1.12",
+    "react-to-print": "^2.6.3",
+    "react-toastify": "^5.5.0",
+    "react-transition-group": "^4.4.1",
+    "react-vertical-timeline-component": "^2.5.0",
+    "reactour": "^1.16.3",
+    "reactstrap": "^8.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.0.1",
+    "sweetalert2": "^9.10.2",
+    "world-map-geojson": "^1.0.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "plugins": [
+      "jsx-a11y"
+    ],
+    "rules": {
+      "no-whitespace-before-property": "off"
+    },
+    "overrides": [
+      {
+        "files": [
+          "*-index.js"
+        ],
+        "rules": {
+          "no-unused-expressions": "off"
+        }
+      }
+    ],
+    "reportUnusedDisableDirectives": true,
+    "noInlineConfig": true
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "moment": "^2.26.0",
+    "moment-timezone": "^0.5.31",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

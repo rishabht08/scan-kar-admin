@@ -1,0 +1,510 @@
+/**=====================
+    67. Dashboard hospital css starts
+==========================**/
+.hospital-widgets {
+  align-items: center;
+  position: relative;
+  @each $light-bg-name, $light-bg-color in (primary, $primary-color),
+  (secondary, $secondary-color) ,
+  (success, $success-color),
+  (danger, $danger-color),
+  (info, $info-color),
+  (light, $light-color),
+  (dark, $dark-color),
+  (warning, $warning-color) {
+    .light-bg-#{$light-bg-name}{
+      background-color: rgba($light-bg-color, 0.2);
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      border-radius: 100%;
+    }
+  }
+  &:hover{
+    .flower1{
+      &:before{
+        animation: live-leaf 2s infinite linear;
+      }
+    }
+  }
+  @keyframes live-leaf {
+    0% {
+     transform: rotate(30deg);
+   }
+   50% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+h3{
+  line-height: 0.8;
+}
+.badge{
+  vertical-align: top;
+}
+.flowers{
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 250px;
+}
+.flower-primary {
+  &:before {
+    background-color: rgba($primary-color, 0.07) !important;
+  }
+}
+.flower1 {
+  &:before{
+    content: "";
+    position: absolute;
+    height: 105px;
+    width: 150px;
+    background-color: rgba($danger-color, 0.07);
+    border-radius: 50%;
+    top: -65px;
+    left:194px;
+    transform: rotate(30deg);
+    z-index: 1;
+  }
+
+}
+.flower2:before{
+  content: "";
+  position: absolute;
+  height: 140px;
+  width: 145px;
+  background-color: rgba($danger-color, 0.07);
+  border-radius: 50%;
+  top: -15px;
+  left:180px;
+  transform: rotate(50deg);
+}
+.flower3:before{
+  content: "";
+  position: absolute;
+  height: 145px;
+  width: 150px;
+  background-color: rgba($danger-color, 0.07);
+  border-radius: 50%;
+  top: -120px;
+  left:240px;
+  transform: rotate(50deg);
+}
+.hospital-box {
+  width: 70px;
+  height: 70px;
+  margin-right: 30px;
+}
+img{
+  height: 35px;
+}
+}
+.hospital-small-chart{
+  align-items: center;
+  margin-bottom: -10px;
+  .small-bar{
+    position: relative;
+    .flot-chart-container{
+      height: 80px;
+      width: 80px;
+      .chartist-tooltip {
+        position: absolute;
+        opacity: 0;
+        .chartist-tooltip-value {
+          font-size: 10px;
+          padding: 5px;
+          color: $white;
+          background-color: rgba(0, 0, 0, 0.5);
+          border-radius: 4px;
+        }
+        &.tooltip-show {
+          opacity: 1;
+        }
+      }
+      svg{
+        position: absolute;
+        bottom: 14px;
+        width: 100%;
+        height: 95%;
+      }
+    }
+    .small-chart{
+      svg {
+        .ct-series-a  {
+          .ct-point, .ct-line, .ct-bar, .ct-slice-donut {
+            stroke: $secondary-color;
+          }
+        }
+        .ct-series-b  {
+          .ct-point, .ct-line, .ct-bar, .ct-slice-donut {
+            stroke: rgba($secondary-color, 0.1);
+          }
+        }
+      }
+      .chartist-tooltip {
+        .chartist-tooltip-value {
+          background-color: $secondary-color;
+          box-shadow: 1px 1.732px 8px 0px rgba( $secondary-color, 0.5 );
+        }
+      }
+    }
+    .small-chart1{
+      .chartist-tooltip {
+        .chartist-tooltip-value {
+          background-color: $warning-color;
+          box-shadow: 1px 1.732px 8px 0px rgba( $warning-color, 0.5 );
+        }
+      }
+      svg {
+        .ct-series-a  {
+          .ct-point, .ct-line, .ct-bar, .ct-slice-donut {
+            stroke: $warning-color;
+          }
+        }
+        .ct-series-b  {
+          .ct-point, .ct-line, .ct-bar, .ct-slice-donut {
+            stroke: rgba($warning-color, 0.1);
+          }
+        }
+      }
+    }
+    .small-chart2{
+      .chartist-tooltip {
+        .chartist-tooltip-value {
+          background-color: $primary-color;
+          box-shadow: 1px 1.732px 8px 0px rgba( $primary-color, 0.5 );
+        }
+      }
+      svg {
+        .ct-series-a  {
+          .ct-point, .ct-line, .ct-bar, .ct-slice-donut {
+            stroke: $primary-color;
+          }
+        }
+        .ct-series-b  {
+          .ct-point, .ct-line, .ct-bar, .ct-slice-donut {
+            stroke: rgba($primary-color, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
+.hospital-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+#column-chart {
+  .apexcharts-legend {
+    bottom: 1px !important;
+    .apexcharts-legend-series {
+      &:first-child {
+        margin-right: 15px !important;
+      }
+    }
+  }
+  .apexcharts-legend-marker {
+    margin-right: 10px;
+  }
+  .apexcharts-legend-text {
+    color: #8d98aa !important;
+    b {
+      color: $black;
+    }
+  }
+}
+.hospital-chartist .hospital-curve .ct-series.ct-series-b .ct-line {
+  stroke: #dbdfe9;
+  stroke-width: 2px;
+  stroke-dasharray: 5px 2px;
+  stroke: #dbdfe9;
+  stroke-width: 2px;
+  stroke-dasharray: 5px 2px;
+  animation: hospital-dashoffset 200ms infinite linear;
+}
+@keyframes hospital-dashoffset {
+  0% {
+    stroke-dashoffset: 7px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+.hospital-bg{
+  .card-header{
+    background-color: $transparent-color;
+    border-bottom: none !important;
+    h5{
+      -webkit-text-fill-color: $white !important;
+    }
+  }
+}
+.hospital-chartist {
+  .hospital-curve {
+    height: 265px;
+    width: 100%;
+    padding-top: 85px;
+  }
+  svg {
+    .ct-series-a  {
+      .ct-point, .ct-line, .ct-bar, .ct-slice-donut {
+        stroke: #ffffff;
+      }
+      .ct-area {
+       fill: rgba(255,255,255,0.8)!important;
+     }
+   }
+   .ct-series-b {
+    .ct-area {
+     fill: none !important;
+   }
+ }
+}
+}
+.hospital-pin{
+  background-color: rgba(255, 255, 255, 0.07);
+  padding: 0 30px 30px;
+  justify-content: space-between;
+  display: flex;
+  align-items: flex-end;
+  vertical-align: middle;
+  img{
+    padding: 15px;
+    background-color: rgba($white, 0.1);
+    border-radius: 25px 6px 25px 25px;
+  }
+}
+.hospital-user{
+  .card-body{
+    padding: 55px 0;
+  }
+}
+.hospital-timeline{
+  h6{
+    color: #1b3155;
+    margin-bottom: 10px;
+  }
+  span{
+    margin-bottom: 20px;
+  }
+  &.timeline-circle{
+    .media {
+      p {
+        color: $black;
+        font-weight: 400;
+        margin-bottom: 12px;
+        &+ p {
+          color: #cbcdcf;
+          background-color: red;
+        }
+      }
+      .paragraph-font {
+        color: $light-font;
+      }
+    }
+  }
+  .media{
+    align-items: unset;
+    margin-bottom: 28px;
+    .timeline-background {
+      .timeline-line{
+        height: calc(100% + 30px);
+        top: 0;
+      }
+    }
+  }
+}
+.booked-table {
+  table {
+    tr {
+      th, td {
+        text-align: left;
+      }
+      th {
+        padding-left: 30px !important;
+      }
+    }
+  }
+}
+.hospital-table{
+  .icofont{
+    background-color: #f8f9fa;
+    padding: 8px 10px;
+    border-radius: 100%;
+    color: #b7b8b9;
+  }
+  table {
+    tbody{
+      tr{
+        td {
+          .hospital-diseases{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            @each $circle-small-name, $circle-small-color in (primary, $primary-color),
+            (secondary, $secondary-color) ,
+            (success, $success-color),
+            (danger, $danger-color),
+            (info, $info-color),
+            (light, $light-color),
+            (dark, $dark-color),
+            (warning, $warning-color) {
+              .circle-small-#{$circle-small-name}{
+                width: 6px;
+                height: 6px;
+                border-radius: 100%;
+                margin-right: 15px;
+                background-color: $circle-small-color;
+                box-shadow: 0 0 8px 2px rgba($circle-small-color, 0.4);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.chart-data{
+  .apexcharts-legend{
+    &.position-bottom{
+      &.center{
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+.hospital-diseases{
+  justify-content: center;
+}
+@media screen and (max-width: 1199px) {
+  .hospital-table {
+    table {
+      tr {
+        th,td {
+          &:first-child {
+            min-width: 162px !important;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .hospital-widgets {
+    .hospital-box {
+      margin-right: 20px;
+      width: 60px;
+      height: 60px;
+    }
+  }
+  .hospital-pin {
+    padding: 0 20px 20px;
+  }
+  .booked-table {
+    table {
+      tr {
+        th {
+          padding-left: 20px !important;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px){
+  .last-card{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid $transparent-color !important;
+  }
+}
+@media screen and (max-width: 600px){
+ .hospital-timeline{
+   .media{
+     margin-bottom: 20px;
+     .media-body{
+       img{
+         width: 120px;
+         height: 60px;
+       }
+     }
+   }
+ }
+}
+@media screen and (max-width: 575px){
+  .hospital-widgets {
+    .hospital-box {
+      margin-right: 15px;
+      width: 50px;
+      height: 50px;
+      img {
+        height: 30px;
+      }
+    }
+  }
+  .booked-table {
+    table {
+      tr {
+        th {
+          padding-left: 15px !important;
+        }
+        th,td {
+          &:nth-child(3), &:nth-child(2) {
+            min-width: 150px !important;
+          }
+        }
+      }
+    }
+  }
+  .hospital-pin {
+    background-color: $transparent-color;
+    img {
+      padding: 10px;
+    }
+  }
+  .r-hospital-chart{
+    text-align: center;
+  }
+  .last-card{
+    display: block;
+    margin-top: 0;
+  }
+  .hospital-chartist {
+    .hospital-curve {
+     height: 150px;
+     padding-top: 30px;
+   }
+ }
+}
+@media screen and (max-width: 480px){
+  .hospital-patients{
+    max-width: 100%;
+    flex: 0 0 100%
+  }
+}
+@media screen and (max-width: 360px){
+  .hospital-timeline{
+    .media{
+      .media-body{
+        img{
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+  .hospital-pin{
+   display: inherit;
+   .hospital-profit {
+    margin-top: 15px;
+  }
+}
+}
+
+/**=====================
+     67. Dashboard hospital  CSS Ends
+==========================**/

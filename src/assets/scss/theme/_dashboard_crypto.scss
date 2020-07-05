@@ -1,0 +1,621 @@
+/**=====================
+    69. Dashboard Crypto CSS Start
+==========================**/
+.btn-gradient-custom {
+  position: relative;
+  letter-spacing: 0.8px;
+  background-image: linear-gradient(to right, lighten($primary-color, 5%), darken($primary-color, 2%));
+  box-shadow: 2.5px 4.33px 18px 0 rgba($primary-color, 0.25);
+  color: $white !important;
+  &:hover {
+    background-size: 100%;
+  }
+  .round-shape {
+    width: 33px;
+    height: 33px;
+    background-color: darken($primary-color, 5%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    i {
+      color: $white;
+      font-size: 17px;
+    }
+  }
+}
+.bck-gradient-primary {
+  background-image: $gradient-primary-direction;
+  box-shadow: 2.5px 4.33px 18px 0 rgba($primary-color, 0.20);
+  color: $white;
+}
+.bck-gradient-secondary {
+  background-image: $gradient-secondary-direction;
+  box-shadow: -0.5px 4.33px 16px 0px rgba($secondary-color, 0.20);
+  color: $white !important;
+}
+.bck-gradient-warning {
+  background-image: $gradient-warning-direction;
+  box-shadow:-0.5px 4.33px 16px 0px rgba(255, 83, 19, 0.25);
+  color: $white !important;
+}
+.crypto-current {
+  .row {
+    padding: 0 15px;
+  }
+  .current-balance {
+    span {
+      color: $light-font;
+      text-transform: uppercase;
+    }
+    h2 {
+      font-family: $font-nunito;
+      font-weight: 700;
+      margin-top: 15px;
+      margin-bottom: 18px;
+      font-size: 36px;
+      span {
+        color: $theme-body-font-color;
+      }
+    }
+    .btn-vertical-align {
+      align-items: center;
+      .btn {
+        padding-right: 62px;
+      }
+      .setting-dot {
+        .setting-bg {
+          margin-left: 15px;
+          background-color: $white;
+          box-shadow: 2.5px 4.33px 18px 0 rgba($primary-color, 0.20);
+        }
+      }
+    }
+  }
+}
+.crypto-amount {
+  .amount-detail {
+    label {
+      color: $light-font;
+      text-transform: uppercase;
+    }
+    &:first-child {
+      margin-bottom: 13px;
+    }
+    .number-amount {
+      .amount-inner {
+        width: auto;
+      }
+    }
+    .amount-inner {
+      background-color: rgba($primary-color, 0.04);
+      color: $primary-color;
+      font-weight: 600;
+      width: 100%;
+      padding: 5px 20px;
+      border-radius: 8px;
+      span {
+        vertical-align: middle;
+      }
+      .row {
+        .col {
+          + .col {
+            border-left: 1px solid #daedfc;
+          }
+        }
+      }
+    }
+  }
+  .shape-right {
+    position: absolute;
+    top: 42px;
+    right: -53px;
+    i {
+      position: absolute;
+      top: 20px;
+      right: 27px;
+      z-index: 3;
+      color: $white;
+    }
+    .shape-create {
+      position: relative;
+      float: left;
+      vertical-align: middle;
+      width: 50px;
+      height: 50px;
+      transform: rotate(45deg);
+      &:before, &:after {
+        content: '';
+        position: absolute;
+      }
+      &:before {
+        left: 3px;
+        width: 100%;
+        height: 100%;
+        border-radius: 0 0 0 35%;
+        background-color: $primary-color;
+        top: 0;
+      }
+      &:after {
+        top: -0.58em;
+        right: -16%;
+        width: 62%;
+        height: 56%;
+        border-radius: 100%;
+        background-color: $white;
+      }
+    }
+  }
+}
+.distributed-crypto {
+  span {
+    color: $light-font;
+    font-weight: 600;
+  }
+  h5 {
+    font-family: $font-nunito;
+    font-weight: 700;
+    span {
+      color: $theme-body-font-color;
+      font-weight: 700;
+    }
+    .distributed-arrow-square {
+      margin-left: 10px;
+      .square-crypto {
+        width: 30px;
+        height: 30px;
+        background-color: $white;
+        box-shadow: 2.5px 4.33px 18px 0 rgba($primary-color, 0.18);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          width: 14px;
+          height: 14px;
+          stroke-width: 3px;
+        }
+      }
+    }
+  }
+  .distributed-bottom {
+    margin: 30px 0;
+    .progress-animate {
+      background-image: linear-gradient(to right, #edf1f5, #fff);
+      .progress-tooltip {
+        width: 45px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $primary-color;
+        color: $white;
+        bottom: -48px;
+        right: -16px;
+        border-radius: 10px;
+        &:before {
+          width: 0;
+          height: 0;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-bottom: 7px solid $primary-color;
+          content: "";
+          top: -7px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          z-index: 2;
+        }
+        &:after {
+          width: 0;
+          height: 0;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-bottom: 7px solid #717171;
+          content: "";
+          top: -7px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+.crypto-graph-card {
+  .media {
+    .bitcoin-graph-content {
+      span {
+        color: $light-font;
+      }
+    }
+    .badge {
+      background-color: rgba($primary-color, 0.04);
+    }
+    .right-setting {
+      .setting-dot {
+        .setting-bg {
+          background-color: $white;
+          box-shadow: 2.5px 4.33px 18px 0 rgba(251, 46, 99, 0.10);
+        }
+      }
+    }
+    .rounded-icon {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+      margin-right: 15px;
+      border-radius: 100%;
+      i {
+        font-size: 25px;
+      }
+      &:hover {
+        background-size: 100%;
+      }
+    }
+  }
+  &.secondary-crypto {
+    .media {
+      .badge {
+        background-color: rgba($secondary-color, 0.04);
+      }
+    }
+  }
+  &.warning-crypto {
+    .media {
+      .badge {
+        background-color: #fff8f3;
+      }
+    }
+  }
+}
+.crypto-header {
+  .chart-value-box {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+  }
+}
+.our-growth-bottom {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+.crypto-table-market {
+  table {
+    thead{
+      tr {
+        th {
+          font-weight: 700;
+          text-transform: uppercase;
+          border-bottom: none;
+          background-color: $light-body-bg-color;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          padding: 20px;
+          &:nth-child(3) {
+            color: $light-font;
+          }
+          .badge {
+            font-weight: normal;
+          }
+        }
+      }
+      .btn-gradient-custom {
+        td {
+          color: $white;
+          span {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+.bitcoin-table {
+  table {
+    tbody {
+      tr {
+        td {
+          vertical-align: middle;
+          span {
+            color: $light-font;
+          }
+          .btn {
+            &:hover, &:focus, &.active, &:active {
+              border-color: $transparent-color !important;
+            }
+          }
+          .btn-gradient-custom {
+            box-shadow: -2.5px 3.33px 13px 0 rgba($primary-color, 0.25);
+          }
+          .bck-gradient-secondary {
+            box-shadow: -2.5px 3.33px 13px 0 rgba($secondary-color, 0.25);
+            &:hover {
+              background-size: 100%;
+            }
+          }
+          .bck-gradient-warning {
+            box-shadow: -2.5px 3.33px 13px 0 rgba(255, 83, 19, 0.25);
+            &:hover {
+              background-size: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.sell-bitcoin {
+  table {
+    tbody {
+      tr {
+        td {
+          .btn {
+            background-color: lighten($secondary-color, 38%) !important;
+          }
+        }
+      }
+    }
+  }
+}
+.stop-bitcoin {
+  table {
+    tbody {
+      tr {
+        td {
+          .btn {
+            background-color: #ffefe6 !important;
+          }
+        }
+      }
+    }
+  }
+}
+.gradient-table-line-danger {
+  background-image: linear-gradient(to right, #ff4f7d, #ea3967);
+  box-shadow: 2.5px 4.33px 18px 0 rgba(251, 46, 99, 0.25);
+  td {
+    color: $white;
+    span {
+      color: $white;
+    }
+  }
+}
+.crypto-depth-container {
+  .ct-chart {
+    height: 445px;
+    .ct-series-a {
+      .ct-line, .ct-bar, .ct-slice-donut {
+        stroke: $primary-color;
+      }
+      .ct-circle{
+        fill: white;
+        stroke-width:3;
+        stroke:$primary-color;
+      }
+    }
+    .ct-series-b {
+      .ct-slice-pie, .ct-slice-donut-solid, .ct-area {
+        fill: $secondary-color;
+      }
+      .ct-line, .ct-bar, .ct-slice-donut {
+        stroke:  $secondary-color;
+      }
+      .ct-circle{
+        fill: white;
+        stroke-width:3;
+        stroke: $secondary-color;
+      }
+    }
+    .ct-area {
+      fill-opacity: 0.050;
+    }
+    .ct-grid {
+      stroke: $light-chartist-grid-color;
+      stroke-width: 0.50;
+      stroke-dasharray: unset;
+    }
+    .ct-label{
+      color: $theme-body-font-color;
+      &.ct-vertical{
+        &.ct-start {
+          padding-right: 15px;
+        }
+      }
+    }
+  }
+  .crypto-graph-card {
+    margin-top: 18px;
+  }
+}
+@media screen and (min-device-width: 1366px) and (max-device-width: 1440px) {
+  .xl-50 {
+    max-width: 50%;
+    flex:0 0 50%;
+  }
+  .xl-100{
+    max-width: 100%;
+    flex:0 0 100%;
+  }
+}
+@media screen and (max-width: 1366px) {
+  .sales-product-table {
+    &.crypto-table-market {
+      table {
+        tbody {
+          tr {
+            td{
+              &:nth-child(2),
+              &:nth-child(4){
+                min-width: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1199px) {
+  .crypto-current {
+    .current-balance {
+      h2 {
+        font-size: 30px;
+      }
+    }
+    .row {
+      > div[class^="col-"] {
+        &:last-child {
+          .crypto-amount {
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+    .crypto-amount {
+      .shape-right {
+        top: -4px;
+      }
+    }
+  }
+  .crypto-depth-container {
+    .ct-chart {
+      height: 250px;
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .crypto-current {
+    .row {
+      > div[class^="col-"] {
+        &:last-child {
+          .crypto-amount {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+    .crypto-amount {
+       .shape-right {
+           right: -42px;
+       }
+     }
+  }
+  .distributed-crypto {
+    .distributed-bottom {
+      margin: 20px 0;
+      .progress-animate {
+        .progress-tooltip {
+          bottom: -41px;
+        }
+      }
+    }
+  }
+  .crypto-header {
+    .chart-value-box {
+      top: 19px;
+      right: 20px;
+    }
+  }
+  .crypto-depth-container {
+    .crypto-graph-card {
+      margin-top: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .crypto-current {
+    .row {
+      > div[class^="col-"] {
+        &:last-child, &:nth-child(2) {
+          .crypto-amount {
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+  }
+  .distributed-crypto {
+    .distributed-bottom {
+      margin: 15px 0;
+      .progress-animate {
+        span {
+          font-size: 13px;
+        }
+        .progress-tooltip {
+          bottom: -37px;
+        }
+      }
+    }
+    .text-right {
+      text-align: left !important;
+      margin-top: 15px;
+    }
+  }
+  .crypto-header {
+    .chart-value-box {
+      display: none;
+    }
+  }
+  .crypto-amount {
+    .amount-detail {
+      .number-amount {
+        .btn {
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+  .crypto-table-market {
+    table {
+      thead {
+        tr {
+          th {
+            padding: 15px;
+          }
+        }
+      }
+      tbody {
+        tr {
+           td {
+            &:first-child {
+              min-width: 186px;
+            }
+            &:nth-child(2),
+            &:nth-child(3) {
+              min-width: 97px !important;
+            }
+            padding: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 360px) {
+  .crypto-amount {
+    .amount-detail {
+      .amount-inner {
+        padding: 5px 10px;
+      }
+    }
+  }
+}
+/**=====================
+    69. Dashboard Crypto  CSS End
+==========================**/

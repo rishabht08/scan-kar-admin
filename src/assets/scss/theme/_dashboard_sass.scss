@@ -1,0 +1,413 @@
+/**=====================
+    70. Dashboard Sass CSS Start
+==========================**/
+.progress-gradient-fill {
+  margin-top: 15px;
+  .progress {
+    &.progress-animate {
+      background-color: #f2f6ff;
+    }
+    @each $progress-gradient-name, $progress-gradient-color in (primary, $gradient-primary-direction),
+            (secondary, $gradient-secondary-direction) ,
+            (success, $gradient-success-direction),
+            (danger, $gradient-danger-direction),
+            (info, $gradient-info-direction),
+            (warning, $gradient-warning-direction) {
+      .progress-gradient-#{$progress-gradient-name}{
+        background-image: $progress-gradient-color;
+        position: relative;
+        border-radius: 5px;
+        &:hover {
+          background-size: 100%;
+        }
+      }
+    }
+
+  }
+}
+.down-arrow-align {
+  vertical-align: text-bottom !important;
+  span, i {
+    vertical-align: text-bottom !important;
+  }
+}
+@each $bg-gradient-name, $bg-gradient-color in (primary, $gradient-primary-direction),
+        (secondary, $gradient-secondary-direction) ,
+        (success, $gradient-success-direction),
+        (danger, $gradient-danger-direction),
+        (info, $gradient-info-direction),
+        (warning, $gradient-warning-direction) {
+  .bg-gradient-#{$bg-gradient-name}{
+    background-image: $bg-gradient-color;
+    color: $white;
+    &:hover {
+      background-size: 100%;
+    }
+  }
+}
+.sass-widgets {
+  .media {
+   padding: 30px;
+   margin-bottom: -14px;
+    .setting-dot {
+      @each $setting-bg-name, $setting-bg-color in (primary, $primary-color),
+              (secondary, $secondary-color) ,
+              (success, $success-color),
+              (danger, $danger-color),
+              (info, $info-color),
+              (light, $light-color),
+              (dark, $dark-color),
+              (warning, $warning-color) {
+        .setting-bg-#{$setting-bg-name}{
+          background-color: $white;
+          box-shadow: 2.5px 2px 26px 0 rgba($setting-bg-color, 0.15);
+        }
+      }
+    }
+    .media-body {
+      p {
+        font-size: 12px;
+        font-weight: 800;
+        font-family: $font-nunito;
+        text-transform: uppercase;
+        color: $theme-body-sub-title-color;
+      }
+    }
+  }
+  .footer-shape {
+    border-radius: 133% 164% 90% 98% / 82% 76% 50% 50%;
+    padding: 23px 30px 24px 30px;
+    width: 100%;
+    bottom: -10px;
+    position: relative;
+    .sass-footer {
+      position: relative;
+      margin-bottom: 7px;
+      span, i {
+        vertical-align: middle;
+        font-size: 13px;
+      }
+      @each $b-l-name, $b-l-color in (primary, $primary-color),
+              (secondary, $secondary-color) ,
+              (success, $success-color),
+              (danger, $danger-color),
+              (info, $info-color),
+              (light, $light-color),
+              (dark, $dark-color),
+              (warning, $warning-color) {
+        .b-l-#{$b-l-name}{
+          border-left: 1px solid  lighten($b-l-color, 15%) !important;
+        }
+      }
+      .small-sass {
+        position: absolute;
+        top: -15px;
+        right: -18px;
+        .flot-chart-container {
+          height: 45px;
+          width: 60px;
+          svg {
+            position: relative;
+          }
+          .chartist-tooltip {
+            position: absolute;
+            opacity: 0;
+            .chartist-tooltip-value {
+               font-size: 10px;
+               padding: 5px;
+              border-radius: 4px;
+               background-color: rgba($black, 0.5);
+            }
+            &.tooltip-show {
+              opacity: 1;
+            }
+          }
+          svg {
+            .ct-series-a {
+              .ct-point, .ct-line, .ct-bar, .ct-slice-donut {
+                stroke: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.sass-graph-card {
+  .badge {
+    background-color: #e9faf1;
+  }
+}
+.overview-sass {
+  .card-body {
+    border-radius: 15px;
+  }
+  .overview-color {
+    img {
+      filter: brightness(1) invert(100%);
+      opacity: 0.1;
+      position: absolute;
+      top: 0;
+      right: -13px;
+    }
+    .bg-gradient-primary {
+      .btn {
+        background-color: lighten($primary-color, 12%);
+        color: $white;
+      }
+    }
+    .bg-gradient-danger {
+      .btn {
+        background-color: lighten($danger-color, 5%);
+        color: $white;
+      }
+    }
+  }
+  .progress-sass {
+    .sass-overview {
+      .over-color {
+         color: $light-font;
+      }
+      + .sass-overview {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+.sass-table {
+  table {
+    tbody {
+      tr {
+        td {
+          .media {
+            align-items: center;
+          }
+          img {
+            filter: none;
+          }
+          span {
+            color: $theme-body-font-color;
+          }
+          small {
+            color: $light-font;
+          }
+        }
+        &:hover {
+          background-image: linear-gradient(to right, lighten($primary-color, 15%), darken($primary-color, 5%));
+          .btn {
+            color: $white !important;
+          }
+          td {
+            span {
+              color: $white;
+            }
+            small {
+              color: rgba($white, 0.5);
+            }
+            &:last-child {
+              img {
+                filter: brightness(0) invert(100%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.jvector-map-sass {
+  height: 285px;
+}
+.sass-map-details {
+  margin-top: 30px;
+  align-items: flex-end;
+  .sass-inner-map {
+    span, i {
+      vertical-align: middle;
+    }
+    .arrow-align-map {
+      vertical-align: top;
+      i {
+        vertical-align: top;
+      }
+    }
+  }
+}
+.sass-apex-radial {
+  .apexcharts-radialbar-track {
+    #apexcharts-radialbarTrack-0 {
+      stroke-width: 10px;
+      stroke: rgba($primary-color, 0.1);
+    }
+  }
+  .apexcharts-radialbar-track {
+    #apexcharts-radialbarTrack-1 {
+      stroke-width: 5px;
+      stroke: rgba($secondary-color, 0.1);
+    }
+  }
+  #apexcharts-series-0 {
+    #apexcharts-radialbar-slice-0 {
+      stroke-width: 25px;
+    }
+  }
+  .apexcharts-radial-series[rel="2"]  {
+   path {
+      stroke-width: 10px;
+    }
+  }
+}
+.chartist-sass-container {
+  height: 358px;
+  &.ct-10 {
+    svg {
+      .ct-label {
+        color: $theme-body-sub-title-color;
+      }
+      .ct-grids {
+        .ct-grid {
+          stroke-dasharray: 0;
+          stroke: $light-chartist-grid-color;
+        }
+      }
+      .ct-series-a {
+        .ct-bar {
+          stroke: url(#gradient) !important;
+          z-index: 1 !important;
+        }
+      }
+      .ct-series-b {
+        .ct-bar {
+          stroke: rgba($primary-color, 0.08) !important;
+        }
+      }
+    }
+  }
+}
+.sass-top-cards {
+  .col {
+    flex: 0 0 20%;
+    width: 20%;
+  }
+}
+// sass Responsive
+@media screen and (max-width: 1660px) {
+  .sass-top-cards {
+    .col {
+      flex: 0 0 33.33%;
+      width: 33.33%;
+      &:nth-child(4),
+      &:nth-child(5) {
+        flex: 0 0 50%;
+        width: 50%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1366px){
+}
+@media only screen and (max-width: 1199px) {
+  .sass-top-cards {
+    .col {
+      flex: 0 0 50%;
+      width: 50%;
+      &:nth-child(5) {
+        flex: 0 0 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 991px){
+  .chartist-sass-container {
+    height: 290px;
+    .ct-chart  {
+      height: 100%;
+      svg {
+        height: 100% !important;
+      }
+    } 
+  }
+  .sass-widgets {
+    .media {
+      padding: 20px;
+      margin-bottom: -11px;
+    }
+    .footer-shape {
+      padding: 20px 20px 20px 20px;
+    }
+  }
+  .overview-sass {
+    .progress-sass {
+      .sass-overview {
+        + .sass-overview {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  .chartist-sass-container {
+    height: 250px;
+  }
+  .sass-top-cards {
+    .col {
+      flex: 0 0 100%;
+      width: 100%;
+      &:nth-child(4) {
+        flex: 0 0 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 575px){
+  .chartist-sass-container {
+    height: 200px;
+    &.ct-10 {
+      svg {
+        .ct-series-a, .ct-series-b {
+          .ct-bar {
+            stroke-width: 5px !important;
+          }
+        }
+      }
+    }
+  }
+  .sass-widgets {
+    .media {
+      padding: 15px;
+    }
+  }
+  .overview-sass {
+    .overview-color {
+      img {
+        &.img-80 {
+          width: 62px !important;
+        }
+        &.img-60 {
+          width: 50px !important;
+        }
+      }
+    }
+      .progress-sass {
+        .sass-overview {
+          + .sass-overview {
+            margin-top: 15px;
+          }
+        }
+      }
+  }
+  .sass-map-details {
+    .pull-right {
+      float: none;
+      margin-top: 15px;
+    }
+  }
+}
+
+/**=====================
+    70. Dashboard Sass CSS End
+==========================**/
