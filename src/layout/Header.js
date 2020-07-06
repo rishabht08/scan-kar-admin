@@ -125,7 +125,7 @@ import logo_light from '../assets/images/scan-kar-logo.png'
         <div className="main-header-right row">
           <div className="main-header-left d-lg-none">
             <div className="logo-wrapper header-logo normal"><a href="#javascript">
-              <img className="normallogo" src={creativeLogo} alt=""/>
+              {/* <img className="normallogo" src={creativeLogo} alt=""/> */}
               <img className="lightlogo" src={logo_light}  alt="" />
               </a></div>
           </div>
