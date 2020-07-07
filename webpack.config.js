@@ -15,6 +15,9 @@ module.exports = {
             {
                 test: /\.module\.s(a|c)ss$/,
                 exclude: /node_modules/,
+                include: [
+                    path.resolve(__dirname, 'src', 'index.sass')
+                ],
                 loader: [
                     isDevelopment ? MiniCssExtractPlugin.loader : 'style-loader',
                     {
@@ -35,6 +38,9 @@ module.exports = {
             {
                 test: /\.s(a|c)ss$/,
                 exclude: /\.module.(s(a|c)ss)$/,
+                include: [
+                    path.resolve(__dirname, 'src', 'index.sass')
+                 ],
                 loader: [
                     isDevelopment ? MiniCssExtractPlugin.loader : 'style-loader',
                     'css-loader',
@@ -47,13 +53,13 @@ module.exports = {
                 ]
             },
             {
-                test: /\.js$/,
+                test: /\.js$|jsx/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader",
                     options: {
-                        presets: ['@babel/preset-react' ,
-                        {'plugins': ['@babel/plugin-proposal-class-properties']}],
+                        presets: ['@babel/preset-react',
+                            { 'plugins': ['@babel/plugin-proposal-class-properties'] }],
                     }
                 }
             },
@@ -78,7 +84,7 @@ module.exports = {
         compress: true,
         contentBase: './',
         port: 3000,
-      
+
         historyApiFallback: true,
     },
     plugins: [

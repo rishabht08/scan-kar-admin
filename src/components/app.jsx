@@ -8,7 +8,7 @@ import { ToastContainer } from 'react-toastify';
 import Sample from "../components/starterkits/samplepage"
 
 const AppLayout = ({children}) =>  {
-    console.log("children" , children)
+    // console.log("children" , children)
     return(
         <Fragment> 
         <Loader/>
