@@ -12,42 +12,45 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.module\.s(a|c)ss$/,
-                exclude: /node_modules/,
-                include: [
-                    path.resolve(__dirname, 'src', 'index.sass')
-                ],
-                loader: [
-                    isDevelopment ? MiniCssExtractPlugin.loader : 'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: true,
-                            sourceMap: isDevelopment
-                        }
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: isDevelopment
-                        }
-                    }
-                ]
-            },
+            // {
+            //     test: /\.module\.s(a|c)ss$/,
+            //     exclude: /node_modules/,
+            //     include: [
+            //         path.resolve(__dirname, 'src', 'index.sass')
+            //     ],
+            //     loader: [
+            //         isDevelopment ? MiniCssExtractPlugin.loader : 'style-loader',
+            //         {
+            //             loader: 'css-loader',
+            //             options: {
+            //                 modules: true,
+            //                 sourceMap: isDevelopment
+            //             }
+            //         },
+            //         {
+            //             loader: 'sass-loader',
+            //             options: {
+            //                 sourceMap: isDevelopment
+            //             }
+            //         }
+            //     ]
+            // },
             {
                 test: /\.s(a|c)ss$/,
                 exclude: /\.module.(s(a|c)ss)$/,
                 include: [
-                    path.resolve(__dirname, 'src', 'index.sass')
+                   
+                    path.resolve(__dirname, 'src', 'index.scss')
                  ],
-                loader: [
+                 
+                use: [
                     isDevelopment ? MiniCssExtractPlugin.loader : 'style-loader',
                     'css-loader',
                     {
                         loader: 'sass-loader',
                         options: {
-                            sourceMap: isDevelopment
+                            sourceMap: isDevelopment,
+                           
                         }
                     }
                 ]
@@ -102,8 +105,8 @@ module.exports = {
         }),
         ///...
         new MiniCssExtractPlugin({
-            filename: isDevelopment ? '[name].css' : '[name].[hash].css',
-            chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
+            filename: isDevelopment ? '[name].[chunkhash:8].css' : '[name].[hash].css',
+            chunkFilename: isDevelopment ? '[id].[chunkhash:8].css' : '[id].[hash].css'
         })
     ]
 }
