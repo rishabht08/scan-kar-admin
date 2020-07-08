@@ -12,57 +12,47 @@ module.exports = {
     },
     module: {
         rules: [
-            // {
-            //     test: /\.module\.s(a|c)ss$/,
-            //     exclude: /node_modules/,
-            //     include: [
-            //         path.resolve(__dirname, 'src', 'index.sass')
-            //     ],
-            //     loader: [
-            //         isDevelopment ? MiniCssExtractPlugin.loader : 'style-loader',
-            //         {
-            //             loader: 'css-loader',
-            //             options: {
-            //                 modules: true,
-            //                 sourceMap: isDevelopment
-            //             }
-            //         },
-            //         {
-            //             loader: 'sass-loader',
-            //             options: {
-            //                 sourceMap: isDevelopment
-            //             }
-            //         }
-            //     ]
-            // },
             {
-                test: /\.s(a|c)ss$/,
-                exclude: /\.module.(s(a|c)ss)$/,
-                include: [
-                   
-                    path.resolve(__dirname, 'src', 'index.scss')
-                 ],
-                 
-                use: [
+                test: /\.module\.s(a|c)ss$/,
+                exclude: /node_modules/,
+                loader: [
                     isDevelopment ? MiniCssExtractPlugin.loader : 'style-loader',
-                    'css-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            sourceMap: isDevelopment
+                        }
+                    },
                     {
                         loader: 'sass-loader',
                         options: {
-                            sourceMap: isDevelopment,
-                           
+                            sourceMap: isDevelopment
                         }
                     }
                 ]
             },
             {
-                test: /\.js$|jsx/,
+                test: /\.s(a|c)ss$/,
+                exclude: /\.module.(s(a|c)ss)$/,
+                loader: [
+                    isDevelopment ? MiniCssExtractPlugin.loader : 'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: isDevelopment
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader",
                     options: {
-                        presets: ['@babel/preset-react',
-                            { 'plugins': ['@babel/plugin-proposal-class-properties'] }],
+                        presets: ['@babel/preset-react'],
                     }
                 }
             },
@@ -78,6 +68,11 @@ module.exports = {
                 test: /\.(jpe?g|png|gif|svg)$/,
                 exclude: /node_modules/,
                 loader: 'url-loader?limit=1024&name=images/[name].[ext]'
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|svg)$/,
+                exclude: /node_modules/,
+                loader: 'url-loader?limit=1024&name=fonts/[name].[ext]'
             }
         ]
     }, resolve: {
@@ -86,8 +81,14 @@ module.exports = {
     devServer: {
         compress: true,
         contentBase: './',
-        port: 3000,
-
+        port: 4000,
+        proxy: {
+            '/api': {
+                target: 'http://13.233.49.163:8000',
+                secure: false,
+                pathRewrite: { '^/api': '' }
+            }
+        },
         historyApiFallback: true,
     },
     plugins: [
@@ -97,16 +98,12 @@ module.exports = {
                 // Will generate: <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
                 //   'theme-color': '#4285f4'
                 // Will generate: <meta name="theme-color" content="#4285f4">
-            },
-            template: __dirname + '/public/index.html',
-            filename: 'index.html',
-            inject: 'body'
-
+            }
         }),
         ///...
         new MiniCssExtractPlugin({
-            filename: isDevelopment ? '[name].[chunkhash:8].css' : '[name].[hash].css',
-            chunkFilename: isDevelopment ? '[id].[chunkhash:8].css' : '[id].[hash].css'
+            filename: isDevelopment ? '[name].css' : '[name].[hash].css',
+            chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
         })
     ]
 }

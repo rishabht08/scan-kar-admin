@@ -1,4 +1,4 @@
-import logo from '../assets/images/scan-kar-logo.png'
+
 import React, { Fragment, useState, useEffect } from 'react';
 import {useSelector} from 'react-redux'
 import logo_compact from '../assets/images/scan-kar-logo.png';

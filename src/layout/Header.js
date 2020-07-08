@@ -1,8 +1,8 @@
 
 import React,{useState,useEffect,useCallback, useLayoutEffect} from 'react';
-import creativeLogo from '../assets/images/scan-kar-logo.png';
+// import creativeLogo from '../assets/images/scan-kar-logo.png';
 import Leftbar from './header/Leftbar'
-import Rightbar from './header/Rightbar'
+// import Rightbar from './header/Rightbar'
 import { MoreHorizontal } from 'react-feather';
 import {SearchBarToggle, MobileRightToggle, SwitchToggle} from '../redux/common/actions'
 import { Label, Input } from 'reactstrap';

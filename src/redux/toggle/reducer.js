@@ -17,6 +17,7 @@ const Common = (state = Initial_state, action) => {
                 state.buttonFunctional = true;
                 return state;
             })
+           
 
         case RUNNING_ORDERS:
             let arr2 = []

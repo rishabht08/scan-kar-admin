@@ -1,12 +1,11 @@
 import React, { Fragment, useState, useEffect } from 'react';
-// import BreadCrumb from '../../layout/Breadcrumb'
 import { Container, Row, Col, Card, CardHeader, CardBody, Button } from 'reactstrap';
 import { connect } from 'react-redux';
 
 import axios from "axios"
 
 const Samplepage = (props) => {
-  const [orders, setOrders] = useState([]);
+
 
 
   useEffect(() => {
