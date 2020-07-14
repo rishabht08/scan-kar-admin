@@ -11,7 +11,7 @@ const Common = (state = Initial_state, action) => {
     switch (action.type) {
         case GET_ORDERS:
 
-           axios.get("http://13.233.233.253:5000/api/v1/customer-order").then(res => {
+           axios.get("https://scankar.herokuapp.com/api/v1/customer-order").then(res => {
                 console.log(res)
                 state.orders = res.data.data.orders
                 state.buttonFunctional = true;

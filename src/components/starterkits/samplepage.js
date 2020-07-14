@@ -13,7 +13,7 @@ const Samplepage = (props) => {
   } , []);
 
   const callOrders = () =>{
-    axios.get("http://13.233.233.253:5000/api/v1/customer-order").then(res => {
+    axios.get("https://scankar.herokuapp.com/api/v1/customer-order").then(res => {
       console.log(res)
       props.dispatch({
         type:"ADD_TO_ORDERS",
@@ -25,7 +25,7 @@ const Samplepage = (props) => {
 
   const changeStatus = (id , status) =>{
     if(status == "Pending"){
-      axios.patch(`http://13.233.233.253:5000/api/v1/customer-order/update-order/${id}` , {status : "Placed"}).then(resp=>{
+      axios.patch(`https://scankar.herokuapp.com/api/v1/customer-order/update-order/${id}` , {status : "Placed"}).then(resp=>{
      
         callOrders()
       
