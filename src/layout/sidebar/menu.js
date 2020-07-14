@@ -1,4 +1,4 @@
-import {Home} from 'react-feather';
+import {Home , Anchor} from 'react-feather';
 
 export const MENUITEMS = [
     {
@@ -6,13 +6,11 @@ export const MENUITEMS = [
         //  children: [
         //     { path: `${process.env.PUBLIC_URL}/`, title: 'DashBoard', type: 'link' },
         // ]
-    }
-    // {
-    //     title: 'Starter kit', icon:Anchor , type: 'sub', active: false, children: [
-    //         { path: `${process.env.PUBLIC_URL}/starter-kit/sample-page`, title: 'Sample Page', type: 'link' },
-
-    //     ]
-    // },
+    },
+    {
+        title: 'Generate QR Code', icon:Anchor , type: 'sub2', active: false, path: `${process.env.PUBLIC_URL}`
+          
+    },
     // {
     //     title: 'Support', icon:Headphones,type: 'sub',active: false, children: [
     //         {  path: 'http://support.pixelstrap.com/help-center', title: 'Raise Ticket', type: 'exteral_link', },

@@ -1,0 +1,938 @@
+[
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.77677609999999,
+        "lng": -122.42479689999999
+      },
+      "viewport": {
+        "south": 37.7753711197085,
+        "west": -122.42613463029147,
+        "north": 37.77806908029149,
+        "east": -122.42343666970851
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+    "id": "9a7febec4d42a6dd9f97a576f9b00499bb02cfe6",
+    "name": "La Boulangerie de San Francisco",
+    "distance": "0.1 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": false,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/116094352425570573828/photos\">Barbara Yang</a>"
+        ],
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJU3tHbqKAhYAR3MDnzOK40Nk",
+    "price_level": 1,
+    "rating": 4.1,
+    "reference": "CmRSAAAAKto8w-MUc3NBILgyZdAxBlPueV2EC-CnuHXfZxjPYjbnjilES7ZpC0WsuW3GKbn9IfteViuQfQRJpyAFyTeqH8eGtYjJQBUti0Ge9neJeqpu4O0yjUEbftqvPzJj6PJZEhANGT3ThZ7f_JeDYOzFd7t5GhTuvVqvo3BpknjxOzlZXvz34CNblA",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "bakery",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "500 Hayes Street, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.79033219999999,
+        "lng": -122.4045198
+      },
+      "viewport": {
+        "south": 37.7889925197085,
+        "west": -122.40578648029151,
+        "north": 37.7916904802915,
+        "east": -122.40308851970849
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+    "id": "8a6bc5994097971fa94c7ef99c4a1b836fb4c381",
+    "name": "Cafe Claude",
+    "distance": "0.1 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": true,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 1000,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/110612068001675972859/photos\">Cafe Claude</a>"
+        ],
+        "width": 1500
+      }
+    ],
+    "place_id": "ChIJSdzjdYmAhYARb5BhktWOSg4",
+    "price_level": 2,
+    "rating": 4.2,
+    "reference": "CmRRAAAAi_TxE-0M0EgsJpLRt5cndugU6unPBffd522_RBhtWWaan4bJBq1sadCwa06-dZw2c1kp3zp9lVKBdXJJ9hT_yknAGBK5sUbb-T75hvBMb8FE_GDljiRfjlfG2_lpkAz8EhARkZUFTBvfMSHIWXzW12OwGhRSiFH8Mrws_x5nfwMhb4kSAYs4IQ",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "7 Claude Lane, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.7816977,
+        "lng": -122.41001460000001
+      },
+      "viewport": {
+        "south": 37.7804487197085,
+        "west": -122.4112947302915,
+        "north": 37.7831466802915,
+        "east": -122.40859676970848
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+    "id": "892e2f452faa6d8d8a3c495347199577a339f98c",
+    "name": "Dottie's True Blue Cafe",
+    "distance": "0.2 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": false,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/109080790278674775251/photos\">Lingchuan Chen</a>"
+        ],
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJXbxV1JGAhYARPXnXlHU1eoY",
+    "price_level": 2,
+    "rating": 4.3,
+    "reference": "CmRSAAAA7K_5nRGYud46_3k37OF6_ZzPfh09ogJKslAjYwXRVO6qh-qRCB8eLu-wxv3lieWKtA_DkNkcEgADYbT6O9QMAl0Gs-vswklCz_SynW-fAs-WSJqcxh7GHakA26D3AuJpEhDY8SKGoq488-4PcEjLwzazGhTfbodsZj7hLa9bNYshix48ewUMSQ",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "28 6th St, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.7710938,
+        "lng": -122.41265020000003
+      },
+      "viewport": {
+        "south": 37.76974481970851,
+        "west": -122.41399918029151,
+        "north": 37.7724427802915,
+        "east": -122.41130121970849
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+    "id": "ea6ff166f8491ff9efed520ae1c49ed97e93675a",
+    "name": "DNA Lounge",
+    "distance": "0.2 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": true,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 1080,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/101013455085644492832/photos\">Robert Jones</a>"
+        ],
+        "width": 1920
+      }
+    ],
+    "place_id": "ChIJc_iInSh-j4ARUkdU9Rr5lFI",
+    "price_level": 2,
+    "rating": 4,
+    "reference": "CmRRAAAAg2KklEto9yPpdA_mj-Gcl63QxVuiSCFjYreVV40JCXC4w8_slx7oGhqp6nlYKWTLydfB9BJlAvvC9uTlA5rBWMBnCU4SbhvsfHzGM3KOtYZVZi4v-TBtwxS5hhEKYUmQEhAeR2RFwgsyZtTJCmIQImoeGhRQiym2DLONyZ5EwhpEg48kWM5vXA",
+    "scope": "GOOGLE",
+    "types": [
+      "night_club",
+      "cafe",
+      "bar",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "375 11th St, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.7770356,
+        "lng": -122.40845430000002
+      },
+      "viewport": {
+        "south": 37.7757364197085,
+        "west": -122.40974148029147,
+        "north": 37.7784343802915,
+        "east": -122.40704351970851
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+    "id": "2d0b4ef360b34aceb9ed2b3ae3651a58bde7bfbe",
+    "name": "Sightglass Coffee",
+    "distance": "0.3 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": false,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/116323644361975669170/photos\">Thistle Roses</a>"
+        ],
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJf-V9OIKAhYARu8bBG2S6RME",
+    "price_level": 2,
+    "rating": 4.5,
+    "reference": "CmRSAAAAZ_C75UwaKezfUybvy5t2jUA7Y8JlsIiyRvv-FmOZsm6WdSN-Rk4nr7hN6KJRtDZ9goMIWiqMPsLWcveYQAw5q_ppIObd8d7cskB4NDa4Sz_eAfvyyqgHdil1OmmQZjnyEhAv_QbmUarwbR8Hc5dsffRCGhR3ziwCdBkZVrFuzAM_ryMk9H9tSA",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "270 7th Street, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.785767,
+        "lng": -122.43063000000001
+      },
+      "viewport": {
+        "south": 37.7842754197085,
+        "west": -122.43194908029147,
+        "north": 37.7869733802915,
+        "east": -122.42925111970851
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+    "id": "6c34db954947fe709b120321bde1f7061641c3fc",
+    "name": "New People",
+    "distance": "0.4 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": false,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 1224,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/107879564876088728481/photos\">Anne Cronin</a>"
+        ],
+        "width": 1632
+      }
+    ],
+    "place_id": "ChIJxYJR2riAhYARAG4Ru9aHLPo",
+    "price_level": 2,
+    "rating": 4.5,
+    "reference": "CmRSAAAAYDkIvqoPe0RlPM73A50CDrnTrgbnuSjJvQOoscjx6UGzeRpHm4MojVxjGvh2jGrnediKrgG277TKnrE4EVKhoAv-KEAGA7gfoRpi1Z1Ayx-oTVZjbChZAbKF4QBEvvB6EhA8XzBL0228ZWwIchO-v98vGhTPVMRRApyHS4mbRmacdRD8LbheYw",
+    "scope": "GOOGLE",
+    "types": [
+      "movie_theater",
+      "cafe",
+      "clothing_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "1746 Post Street, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.7824573,
+        "lng": -122.4077618
+      },
+      "viewport": {
+        "south": 37.7811775197085,
+        "west": -122.4090490302915,
+        "north": 37.7838754802915,
+        "east": -122.40635106970853
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+    "id": "51c2fff6e4b4163faee969e844a80d2ab81e6a2e",
+    "name": "Blue Bottle Coffee",
+    "distance": "0.44 mi" ,         
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": false,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/115905478105348855241/photos\">Mike Trach</a>"
+        ],
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJ4QU1LoSAhYAR5u7S0AIFmpE",
+    "price_level": 1,
+    "rating": 4.4,
+    "reference": "CmRSAAAAS_2INWhSssteMj_mpDOlGrXFQSqLhlrwBifrEincsjF5ZCcx5-kHIw6QLlrkzw5rmpmIGIfXzyAfCTOOsBFWqK4J_j0WsNvRAfdmDjyr9tmgmpDYgJrJOi7HGpaEsQiOEhAJPBp36XAf0IGecJcbNDi4GhTjQqZHbPF2NK7BIU_W1aHeU6g2iw",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "66 Mint Street, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.7774628,
+        "lng": -122.39515779999999
+      },
+      "viewport": {
+        "south": 37.7760811697085,
+        "west": -122.39655208029149,
+        "north": 37.7787791302915,
+        "east": -122.39385411970852
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+    "id": "977b70880f1d7e60c5f2f085042f2ac1ebd5326b",
+    "name": "The Creamery",
+    "distance": "0.5 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": false,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 608,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/114821914347282398352/photos\">The Creamery</a>"
+        ],
+        "width": 1080
+      }
+    ],
+    "place_id": "ChIJ8YUefdZ_j4ART8gb7SJeblY",
+    "price_level": 1,
+    "rating": 4.1,
+    "reference": "CmRRAAAA7N4mp23Dy_Uo0h65LfMQAlFAASuhv4GyL6uZQxzsqfWSGtozKVCyfl42tw4MfLfc1z3WoQo0dnejYopirc4rnSnqhzGWggPMcpg_p0saO6iOqcp0vuwRwgGhDY9uJ-bqEhCE5WSpWuPplIXRtsQyAmZUGhTQ5l9PIwsebXeg4-BSJDOKDy3rqQ",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "bar",
+      "meal_takeaway",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "685 4th Street, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.7843791,
+        "lng": -122.40677970000002
+      },
+      "viewport": {
+        "south": 37.7830301197085,
+        "west": -122.4081286802915,
+        "north": 37.7857280802915,
+        "east": -122.40543071970853
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+    "id": "024de0b0c08fd83ae08aee6efef472b42859e9ba",
+    "name": "Auntie Anne's Pretzels",
+    "distance": "0.5 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": false,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/113305919995230455128/photos\">Alex</a>"
+        ],
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJy4kpbIaAhYAR_yxhR0Amrwk",
+    "price_level": 1,
+    "rating": 4.1,
+    "reference": "CmRRAAAAvF-cDT57TXQ4GPkDysLX2fpHtEuCokemmQMOxe8-WSSfI9WFBzjbtO5Gaty2xxBESiAKyQ5XU4WdiDwS8q9tCK8T3yiKE_mFP1JPaa8qsCZNO8uvzPUh-Ebv9OAPyK-IEhCSyQ12znfyfUzPqcjOZbjCGhRIYQStHl7_mGD0jB8B_G1OGQXRDQ",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "bakery",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "845 Market Street #201, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.767019,
+        "lng": -122.42196100000001
+      },
+      "viewport": {
+        "south": 37.7656654197085,
+        "west": -122.42338618029152,
+        "north": 37.7683633802915,
+        "east": -122.4206882197085
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+    "id": "e36ed3acbf815e3cc49501912b2c456edaaf8abc",
+    "name": "Four Barrel Coffee",
+    "distance": "0.7 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": false,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 3036,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/100443244546760560121/photos\">Matt Boehne</a>"
+        ],
+        "width": 4048
+      }
+    ],
+    "place_id": "ChIJ__abjyF-j4ARmyuzGS1yOdc",
+    "price_level": 1,
+    "rating": 4.5,
+    "reference": "CmRSAAAAVLciJvPwQXDk-jZNFm8Vs6LxyMAZUfG0kpzfJ-x32osI973g45q_YsBzdcs5nh9GjleGGOZoMIIOKEHxesxsub13LT3VLU8ngdqSjqJqL4XT7UYPEedmQXExwn4sZaZiEhB0l9JilCLpMEYRdkG3LlAGGhRaMyLi0X4HBy5MQ4DVm1D3JQ5n0Q",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "375 Valencia Street, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.78417,
+        "lng": -122.40210139999999
+      },
+      "viewport": {
+        "south": 37.7827198197085,
+        "west": -122.40332443029149,
+        "north": 37.7854177802915,
+        "east": -122.40062646970853
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+    "id": "6be13075fac2d506c5325c49eaf1b9fd46274fad",
+    "name": "Samovar Tea Lounge",
+    "distance": "0.7 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": false,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 1356,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/108525673692431331401/photos\">Samovar Tea Lounge, Yerba Buena Gardens</a>"
+        ],
+        "width": 2048
+      }
+    ],
+    "place_id": "ChIJwRoTbYeAhYARRVVpbPgZvdw",
+    "price_level": 2,
+    "rating": 4.3,
+    "reference": "CmRSAAAAkpFZYoDg7o3SL6KzHT9rhITdr6xlk8KJpm90pQ_xVyNnCAsTPdxqtUgBarTLHf7NjPP6DlNeStJyALaSKFqBn-I0R71oYUSkvMKnZkXsPc0yuYP-_5HLKzbHBljYkUdiEhBWk68BM6gBNnr5avg7H-HyGhT9asD_3w-UR2mt2uc3jXO9AF83tQ",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "730 Howard Street, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.78776930000001,
+        "lng": -122.41151330000002
+      },
+      "viewport": {
+        "south": 37.7864930697085,
+        "west": -122.4128783302915,
+        "north": 37.7891910302915,
+        "east": -122.41018036970848
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+    "id": "39259f1890c200b2438a145f6c28bcf2ef034fc0",
+    "name": "Honey Honey Cafe & Crepery",
+    "distance": "0.7 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": true,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/106537004352478137587/photos\">Damian Samolej</a>"
+        ],
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJJ5FAFI6AhYARWc6pWHaIZZE",
+    "price_level": 1,
+    "rating": 4.2,
+    "reference": "CmRSAAAATCnI6jkjGq09fKEdMArXl-SMwpsjaoBo2lYyxWGyCJSzbKsmJRNiJANhVYb01cY_jTbXy025hcOlsUlJ7qVH3IBq5S2-lOxy1TRBY8MyPJWVQYw5IDzxd1ApwH3VreZhEhAUmVKT7DunTXAqjPfxHL0zGhRUybD3k5vLiZs08TIGiR68Qe7nmA",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "599 Post Street, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.7862455,
+        "lng": -122.45319460000002
+      },
+      "viewport": {
+        "south": 37.7849710197085,
+        "west": -122.4545591302915,
+        "north": 37.7876689802915,
+        "east": -122.45186116970848
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+    "id": "913b3f1febc842fd5afaf3664d0610946d19b9e1",
+    "name": "Starbucks",
+    "distance": "0.8 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": true,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 664,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/112040718554250917199/photos\">Starbucks</a>"
+        ],
+        "width": 732
+      }
+    ],
+    "place_id": "ChIJgfaHTzGHhYARpAaPEsn2pV8",
+    "price_level": 2,
+    "rating": 4.2,
+    "reference": "CmRRAAAANaBfSWn6HJ8EoZxwRceXCCXMYy3mIkWSuU28H82BArZ0XyZ0R3TH6mO2Lt_PxjGm3ESyNYfSEb1HaD1beJmQmlKUVqJxOkYCyrBILn7RxIycv2HdoZMYb4rhGe_OX1AeEhAsjKdFHmzybTRfcDB4kQTBGhR9RKSxYgpMVyExUFZgDSFyzqLKag",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "3595 California Street, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.80290699999999,
+        "lng": -122.4020405
+      },
+      "viewport": {
+        "south": 37.8015641697085,
+        "west": -122.40333918029148,
+        "north": 37.8042621302915,
+        "east": -122.40064121970852
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+    "id": "cd5bce3cda7d6f6f360d7179b25dc9e33130eb27",
+    "name": "Il Fornaio San Francisco",
+    "distance": "0.9 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": true,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 1365,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/111594709290827866285/photos\">Il Fornaio San Francisco</a>"
+        ],
+        "width": 2048
+      }
+    ],
+    "place_id": "ChIJEzzAJPaAhYARXNaBo1UeFJU",
+    "rating": 4.1,
+    "reference": "CmRSAAAABOMgDNVIcY8--nx-Drs2ckTGv9uKO442sBG_ypeeqspyYA6vEpN5OHct-1Gr5Oo2otNceSIzg4JdfkgBJpG4t72f7puuwWXMkn-Lh8q7kNx37wNzv8pa9FxC8GXsatKcEhCMiMBxcp95Ylb6IljFNresGhTrArd_pdNbmongrnikyuB8ei3ExA",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "1265 Battery Street, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.80845600000001,
+        "lng": -122.414895
+      },
+      "viewport": {
+        "south": 37.80704926970851,
+        "west": -122.41623213029152,
+        "north": 37.80974723029151,
+        "east": -122.4135341697085
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+    "id": "dd1229d0b63e07a48eab115ba6e5998f49baa23e",
+    "name": "Boudin Bakery Cafe",
+    "distance": "1.1 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": true,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 700,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/100648160868945998180/photos\">Boudin Bakery &amp; Cafe</a>"
+        ],
+        "width": 600
+      }
+    ],
+    "place_id": "ChIJFYH6EeOAhYARbqzlQZoIRD8",
+    "rating": 4.3,
+    "reference": "CmRRAAAA8w3hMlpqshrdFiJC97qZnQDDLeEPwxfFBuh79Rj7NrR0v4EInGWNi281v79KgHjSeM1Sondl8gZRtkBe3eSXlAAxd_IRK_nvFtEt9kcmzJ2HEBDFVBZlbkKbMI8ncxjcEhD5GHOvDfKDRlm8IpKwVaOGGhTf2MsqTAw--QyZHLuXUrHv3udi4w",
+    "scope": "GOOGLE",
+    "types": [
+      "bakery",
+      "cafe",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Baker's Hall, 160 Jefferson Street, SF",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.808784,
+        "lng": -122.40976799999999
+      },
+      "viewport": {
+        "south": 37.8072103197085,
+        "west": -122.41122618029146,
+        "north": 37.80990828029149,
+        "east": -122.4085282197085
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+    "id": "8de88a2df523cb2eda7ae3876fae921faf6864c1",
+    "name": "Hard Rock Cafe",
+    "distance": "1.1 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": true,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 2592,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/109331951312931883511/photos\">Jola Lub</a>"
+        ],
+        "width": 3872
+      }
+    ],
+    "place_id": "ChIJHSGzi_yAhYARjust_4pPIbc",
+    "price_level": 2,
+    "rating": 3.7,
+    "reference": "CmRSAAAAknzK4gb7SBpkC2AkM15tGuSjNmNgBJQq1UAFSlKYpYSLJvZGrwA5DLnJQdTRf8xZ95s1-zkaSqmZKTCpRGQiJ2juIJovK31pBRJkXmtFSun5bKWzNX6HGr4udWRYkFmHEhAmOVUSTPq47HTGYTnIJHiIGhSBgwwZgCqx_AZ0KdRK6qSsRGuy9Q",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "256 Pier 39, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.79108300000001,
+        "lng": -122.39874700000001
+      },
+      "viewport": {
+        "south": 37.7898098197085,
+        "west": -122.40019213029149,
+        "north": 37.7925077802915,
+        "east": -122.39749416970847
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+    "id": "3945b6376c3ad30e861eb5363f3b5514f223a440",
+    "name": "Starbucks",
+    "distance": "1.3 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": false,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 664,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/106165513643820136922/photos\">Starbucks</a>"
+        ],
+        "width": 732
+      }
+    ],
+    "place_id": "ChIJDXK6UmKAhYARKXAgxwJyUWA",
+    "price_level": 2,
+    "rating": 3.2,
+    "reference": "CmRRAAAAp6WE5dsWVSSDruXjHX-g5RoEIMnLoeW2XP1rdQZmHKNfUoXnI8CdVwAME21rGGvDCr01sqwbwRXMdcR8wtp6KgwHX3Z6zX7K_pIRpfo-QO-gmKmNpmLdBWk1ycsjEesGEhBYfLVQLoR-IEap6faZJjFxGhSCi8xZzpnZTB1uA2E134dixPg4Rg",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "455 Market Street #100, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.8064437,
+        "lng": -122.41578199999998
+      },
+      "viewport": {
+        "south": 37.8050350697085,
+        "west": -122.4171207802915,
+        "north": 37.80773303029149,
+        "east": -122.41442281970853
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+    "id": "300efc067dc0e0e3d9218b5cff0cbea394886c0b",
+    "name": "Hollywood Cafe",
+    "distance": "1.4 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": false,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 1536,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/114311952553471520881/photos\">Hans Damen</a>"
+        ],
+        "width": 2048
+      }
+    ],
+    "place_id": "ChIJF7AFf-SAhYARJPDwj0CBm14",
+    "price_level": 1,
+    "rating": 4.5,
+    "reference": "CmRRAAAAN3-ZbQHAH1dkgQjKT9Z5sMfB4cTQchd-Tgw4l56obq6vgg1u_ST5pbxbhTPetPQ_kP1DX6OwDumiHdpgbcXiuZNU5YCiFTIO5OHcOf8SXnHTZZ__GdqlEssE1av6SxKVEhBcuvkGrkK6PUTY-YwmRgywGhTzyotO6PKylJbWasqTrU1tY0hCpQ",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "530 North Point Street, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.78876549999999,
+        "lng": -122.40274679999999
+      },
+      "viewport": {
+        "south": 37.7875410697085,
+        "west": -122.40412273029153,
+        "north": 37.7902390302915,
+        "east": -122.40142476970851
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+    "id": "e3e6124732a8e03aa4276691362981ffa59526ee",
+    "name": "Specialty's Cafe & Bakery",
+    "distance": "1.5 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": false,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 2448,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/104847770319584345133/photos\">Shiraz Siddiqui</a>"
+        ],
+        "width": 3264
+      }
+    ],
+    "place_id": "ChIJw-fnNoiAhYARkaDl5mKJ6q0",
+    "price_level": 1,
+    "rating": 3.8,
+    "reference": "CmRSAAAARHSfHlIkei4OAndIeJ_6bjYu61_Ppsf3qFfJogONYdzPejh9zd7-HXK2PcGZFnNDK1s1_IdHfWnLhAYzTGeP8z-xjYMlCp00h9-6KgIxiHIrrGcWo48c7jg_8LAjwAvMEhBD6XKzZupQ_zqkVNrqCaWSGhQOZlju-b76SfiVc2phZln9pBDf7Q",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "bakery",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "McKesson Plaza, 1 Post Street, San Francisco",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 37.76091839999999,
+        "lng": -122.42171329999996
+      },
+      "viewport": {
+        "south": 37.75957476970849,
+        "west": -122.42297003029148,
+        "north": 37.76227273029149,
+        "east": -122.42027206970852
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+    "id": "1883b98f6769be3c79329112195e4623b75ec7fb",
+    "name": "Craftsman and Wolves",
+    "distance": "1.7 mi",          
+    "seats" : 25,
+    "opening_hours": {
+      "open_now": false,
+      "weekday_text": []
+    },
+    "photos": [
+      {
+        "height": 3036,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/106579610943735368439/photos\">Nelson Ray</a>"
+        ],
+        "width": 4048
+      }
+    ],
+    "place_id": "ChIJc3PCIT1-j4ARgxykctQlAaY",
+    "price_level": 1,
+    "rating": 4.5,
+    "reference": "CmRSAAAAx8waVbvErVTwGdozSdrvHj8DTE2cQlNdt7Y9ue9DsaSdM3xyAzqw1ztr4C8nkE3bAy3rKBjZcxJ-GbDH-g5YkD7QoX1jKM-S8xofv2EK7nbl4I3qZkxAD1bZJNwKHUxLEhDthUR9fQK66sUivwL17BhSGhS72-W25K2eGsTlwoFPQkDGQlaAjg",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "bakery",
+      "meal_takeaway",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "746 Valencia Street, San Francisco",
+    "html_attributions": []
+  }
+]

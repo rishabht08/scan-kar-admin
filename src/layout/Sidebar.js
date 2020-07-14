@@ -109,12 +109,16 @@ const Sidebar = () => {
                                     {(menuItem.sidebartitle) ? <div className="sidebar-title">{menuItem.sidebartitle}</div>
                                         : ''}
                                     {(menuItem.type === 'sub') ?
-                                        <a className="sidebar-header" href="#javascript" onClick={() => toggletNavActive(menuItem)}>
+                                        <a className="sidebar-header" href="/" onClick={() => toggletNavActive(menuItem)}>
                                             <menuItem.icon />
                                     <span>{menuItem.title}</span>
                                             <i className="fa fa-angle-right pull-right"></i>
                                         </a>
-                                        : ''}
+                                        :  <a className="sidebar-header" href="/generate" onClick={() => toggletNavActive(menuItem)}>
+                                        <menuItem.icon />
+                                <span>{menuItem.title}</span>
+                                        <i className="fa fa-angle-right pull-right"></i>
+                                    </a>}
                                     {(menuItem.type === 'link') ?
                                         <Link className={`sidebar-header ${menuItem.active ? 'active' :''}`}  onClick={() => toggletNavActive(menuItem)} to={menuItem.path}>
                                             <menuItem.icon /><span>{menuItem.title}</span>
