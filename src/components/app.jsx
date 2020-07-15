@@ -28,6 +28,7 @@ const AppLayout = (props) => {
   // const [options , setOptions] = useState([])
   const [price , setPrice] = useState([])
   const [file , setFile] = useState({})
+  const [seats , setSeats] = useState([])
 
 
   const options = [
@@ -39,18 +40,25 @@ const AppLayout = (props) => {
 
   useEffect(() => {
     const index = Math.floor(Math.random() * shopData.length);
+    let arr = []
+    for(let i= 1  ; i<=25 ; i++){
+      arr[i-1] = i
+    }
+
+    setSeats(arr)
     setShop(shopData[index]);
   }, []);
 
   const dineInGen = () => {
     const qrCodeCanvas = document.querySelectorAll("canvas");
 
-    const qrCodeDataUri = qrCodeCanvas[0].toDataURL("image/jpg", 0.5);
+   
 
     let doc = new jsPDF();
     doc.setFontSize(50);
     for (let i = 0; i < shop.seats; i++) {
       doc.text(80, 220, "Table: " + (i + 1));
+      const qrCodeDataUri = qrCodeCanvas[i].toDataURL("image/jpg", 0.5);
 
       doc.addImage(qrCodeDataUri, "JPEG", 5, 0, 200, 200);
       doc.addPage();
@@ -61,8 +69,9 @@ const AppLayout = (props) => {
 
   const takeAwayGen = () => {
     const qrCodeCanvas = document.querySelectorAll("canvas");
+    console.log("canvasses" , qrCodeCanvas)
 
-    const qrCodeDataUri = qrCodeCanvas[1].toDataURL("image/jpg", 1.0);
+    const qrCodeDataUri = qrCodeCanvas[25].toDataURL("image/jpg", 1.0);
 
     let doc = new jsPDF();
     doc.setFontSize(25);
@@ -164,10 +173,14 @@ const AppLayout = (props) => {
                     Generate for TakeAway
                   </Button>{" "}
                   <div style={{ opacity: 0 }}>
-                    <QRCode
-                      value={`https://scankar.netlify.app/${shop.id}`}
-                      size={200}
-                    />
+                    {seats.map((x)=>(
+                        <QRCode
+                        value={`https://scankar.netlify.app/${shop.id}T${x}`}
+                        size={200}
+                      />
+
+                    ))}
+                  
                     <QRCode
                       value={`https://scankar.netlify.app/${shop.id}take`}
                       size={200}
