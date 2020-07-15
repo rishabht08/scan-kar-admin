@@ -10,25 +10,27 @@ const Samplepage = (props) => {
 
   useEffect(() => {
     callOrders()
-  } , []);
+  }, []);
 
-  const callOrders = () =>{
+  const callOrders = () => {
     axios.get("https://scankar.herokuapp.com/api/v1/customer-order").then(res => {
-      console.log(res)
+      console.log("aaaa", res)
       props.dispatch({
-        type:"ADD_TO_ORDERS",
-        payLoad : res.data.data.orders
+        type: "ADD_TO_ORDERS",
+        payLoad: res.data.data.orders
       })
     })
 
   }
 
-  const changeStatus = (id , status) =>{
-    if(status == "Pending"){
-      axios.patch(`https://scankar.herokuapp.com/api/v1/customer-order/update-order/${id}` , {status : "Placed"}).then(resp=>{
-     
+  // noOfSeatsRequested
+
+  const changeStatus = (id, status) => {
+    if (status == "Pending") {
+      axios.patch(`https://scankar.herokuapp.com/api/v1/customer-order/update-order/${id}`, { status: "Placed" }).then(resp => {
+
         callOrders()
-      
+
       })
     }
   }
@@ -56,6 +58,7 @@ const Samplepage = (props) => {
                         <div>
                           <p><b>{order.item}</b></p>
                           <p>Quantity: {order.quantity}</p>
+
                         </div>
                         <div>
                           {/* <p>${order.price}</p> */}
@@ -66,17 +69,19 @@ const Samplepage = (props) => {
 
                   ))}
                   <div>
+                    <p>Order Type: {order.orderType}</p>
+                    {order.orderType == "Dine In" && <p>Table No: {order.noOfSeatsRequested}</p>}
                     <p>Amount: ${order.price}</p>
                   </div>
 
                 </CardBody>
-                {props.buttonFunctional ? 
-                <Button className="s-btn-extrnal-style" color={order.status == "Pending" ? "success" : "secondary"} onClick={()=>changeStatus(order["_id"] , order.status)} size="sm" block>{order.status == "Pending" ? "Mark As Completed" : "Completed"}</Button>
-                : 
-                <Button className="s-btn-extrnal-style" color="warning" size="sm" block disabled={true}>Pending</Button>
-                
+                {props.buttonFunctional ?
+                  <Button className="s-btn-extrnal-style" color={order.status == "Pending" ? "success" : "secondary"} onClick={() => changeStatus(order["_id"], order.status)} size="sm" block>{order.status == "Pending" ? "Mark As Completed" : "Completed"}</Button>
+                  :
+                  <Button className="s-btn-extrnal-style" color="warning" size="sm" block disabled={true}>Pending</Button>
+
                 }
-                </Card>
+              </Card>
 
             ))}
 
@@ -90,7 +95,7 @@ const Samplepage = (props) => {
 const mapStateToProps = (state) => {
   return {
     orders: state.Toggle.orders,
-    buttonFunctional : state.Toggle.buttonFunctional
+    buttonFunctional: state.Toggle.buttonFunctional
   }
 
 
