@@ -20,15 +20,14 @@ const Common = (state = Initial_state, action) => {
            
 
         case RUNNING_ORDERS:
-            let arr2 = []
-            for(let i =0 ; i<parseInt(state.orders.length/2) ; i++){
-                arr2[i] = state.orders[state.orders.length-1-i];
-            }
+            let arr2 = state.orders
+            state.orders = arr2.filter(item => {
+                return item.status != "Pending"
+            })
 
-            state.orders = arr2;
-            
             state.buttonFunctional = true;
             return state;
+           
         case PENDING_PAYMENTS:
             let arr = state.orders;
             state.orders = arr.filter(item => {
