@@ -255,6 +255,7 @@ const AppLayout = (props) => {
                       <Form.Group as={Col} controlId="formGridEmail">
                         <Form.Label>Menu Item Image</Form.Label>
                         <Form.Control
+                          style={{width: '20%'}}
                           type="file"
                           placeholder="Enter menu Image"
                           onChange = {(e)=>uploadImage(e)}

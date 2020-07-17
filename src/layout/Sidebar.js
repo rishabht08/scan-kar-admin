@@ -91,11 +91,11 @@ const Sidebar = () => {
     return (
         <Fragment>
             <div className={`page-sidebar ${switchToggle? 'open': sidebar_background_color}`}>
-                <div className="main-header-left d-none d-lg-block">
+                <div className="main-header-left d-none d-lg-block" style={{padding: '0px'}}>
                     <div className="logo-wrapper compactLogo">
                         <Link to={`${process.env.PUBLIC_URL}/starter-kit/sample-page`}>
                             <img className="blur-up lazyloaded light" src={logo_light}  alt="" />
-                            <img className="blur-up lazyloaded compactlogo" src={logo_compact}  alt="" />
+                            <img style={{marginTop: '0rem'}} className="blur-up lazyloaded compactlogo" src={logo_compact}  alt="" />
                             {/* <img className="blur-up lazyloaded logo" src={logo}  alt="" /> */}
                         </Link>
                     </div>
