@@ -22,7 +22,7 @@ const Common = (state = Initial_state, action) => {
         case RUNNING_ORDERS:
             let arr2 = state.orders
             state.orders = arr2.filter(item => {
-                return item.status != "Pending"
+                return item.status == "Pending"
             })
 
             state.buttonFunctional = true;
