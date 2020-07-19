@@ -48,7 +48,7 @@ const Samplepage = (props) => {
                   <h5>User {index + 1} </h5>
                   {/* <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span> */}
                 </CardHeader>
-                <CardBody>
+                <CardBody style={order.orderType != "Dine In" ? {"background-color": "#00d400"} : {"background-color": "#ffffff"}}>
                   <h5>Ordered Items</h5>
                   {order.orders.map(order => (
                     <div>

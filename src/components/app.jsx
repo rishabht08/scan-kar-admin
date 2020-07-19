@@ -3,7 +3,15 @@ import Header from "../layout/Header";
 import Sidebar from "../layout/Sidebar";
 import { Route } from "react-router-dom";
 import Loader from "../layout/Loader";
-import { Button, Form, Col, DropdownButton, DropdownItem } from "react-bootstrap";
+import {  Switch  } from  "antd";
+import "./app.css"
+import {
+  Button,
+  Form,
+  Col,
+  DropdownButton,
+  DropdownItem,
+} from "react-bootstrap";
 import "../assets/css/app.css";
 import shopData from "../dummy-shop-data.json";
 
@@ -16,10 +24,7 @@ import Select from "react-select";
 import Axios from "axios";
 import swal from "sweetalert";
 import { Dropdown } from "semantic-ui-react";
-
-
-
-
+import Toggle from "react-toggle";
 
 const groupStyles = {
   display: "flex",
@@ -50,17 +55,19 @@ const AppLayout = (props) => {
   const [shop, setShop] = useState({});
   const [photo, setPhoto] = useState("");
   const [name, setName] = useState("");
-  const [category, setCategory] = useState("");
-  // const [options , setOptions] = useState([])
+  const [category, setCategory] = useState("BURGER");
+
   const [price, setPrice] = useState([]);
   const [file, setFile] = useState({});
   const [seats, setSeats] = useState([]);
+  const [menu, setMenu] = useState([]);
+  const [optionsValue, setOptions] = useState([]);
 
   const options = [
-    { value: "milkType", label: "MilkType" },
-    { value: "size", label: "Size" },
-    { value: "quantity", label: "Quantity" },
-    { value: "decaf", label: "Decaf" },
+    { value: "milkType", label: "milkType" },
+    { value: "size", label: "size" },
+    { value: "quantity", label: "quantity" },
+    { value: "decaf", label: "decaf" },
   ];
 
   const CategoryOptions = [
@@ -85,7 +92,14 @@ const AppLayout = (props) => {
 
     setSeats(arr);
     setShop(shopData[index]);
+    loadMenu();
   }, []);
+
+  const loadMenu = () => {
+    Axios.get("https://scankar.herokuapp.com/api/v1/products").then((res) => {
+      setMenu(res.data.data.products);
+    });
+  };
 
   const dineInGen = () => {
     const qrCodeCanvas = document.querySelectorAll("canvas");
@@ -138,6 +152,19 @@ const AppLayout = (props) => {
     }
   };
 
+  const storeOptions = (e) => {
+    if (e) {
+      let arr = [];
+      e.forEach((item) => {
+        arr.push(item.value);
+      });
+      console.log("options", arr);
+      setOptions(arr);
+    } else {
+      setOptions([]);
+    }
+  };
+
   const onsubmit = () => {
     if (!file.name) {
       alert("No Image Selected");
@@ -149,6 +176,7 @@ const AppLayout = (props) => {
     data.append("category", category);
     data.append("price", price);
     data.append("resturant_id", "RES77110");
+    data.append("options", optionsValue);
     Axios.post("https://scankar.herokuapp.com/api/v1/products", data).then(
       (resp) => {
         if ((resp.data.status = "Success")) {
@@ -157,11 +185,47 @@ const AppLayout = (props) => {
             setFile({});
             setCategory("");
             setPrice("");
+            loadMenu();
           });
         }
       }
     );
   };
+
+  const changeAvailability = (e , status , id) =>{
+    if(status == "Available"){
+      swal({
+        title: "Are you sure?",
+        text: "This Will make this item unavailable",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          Axios.patch(`https://scankar.herokuapp.com/api/v1/products/${id}` , {status:"unAvailable"}).then(()=>{
+            loadMenu()
+          })
+        } 
+      });
+
+    }
+
+    else{
+      Axios.patch(`https://scankar.herokuapp.com/api/v1/products/${id}` , {status:"Available"}).then(()=>{
+        loadMenu()
+      })
+
+    }
+    
+  }
+
+  const deleteItem = (id) =>{
+    Axios.delete(`https://scankar.herokuapp.com/api/v1/products/${id}`).then(()=>{
+      loadMenu()
+    })
+
+  }
 
   return (
     // <Fragment>
@@ -263,6 +327,7 @@ const AppLayout = (props) => {
                           // defaultValue={}
                           options={CategoryOptions}
                           formatGroupLabel={formatGroupLabel}
+                          onChange={(e) => setCategory(e.label)}
                         />
                       </Form.Group>
 
@@ -275,6 +340,7 @@ const AppLayout = (props) => {
                           options={options}
                           className="basic-multi-select"
                           classNamePrefix="select"
+                          onChange={(e) => storeOptions(e)}
                           id="options"
                         />
                       </Form.Group>
@@ -297,203 +363,45 @@ const AppLayout = (props) => {
                     </Button>
                   </Form>
                   <div className="menu-card-grid">
-                    <div class="ui card">
-                      <div class="content">
-                        <div style={{float: "right"}}>
-                        <DropdownButton id="dropdown-item-button" className="custome-class" title="">
-                          <Dropdown.Item as="button">Action</Dropdown.Item>
-                           <Dropdown.Item as="button">Another action</Dropdown.Item>
-                        </DropdownButton>
-
+                    {/* <------------- Cards Start ----------------> */}
+                    {menu.map((item, index) => (
+                      <div class="ui card">
+                        <div class="content">
+                          <div style={{ float: "right" }}>
+                            {/* <DropdownButton id="dropdown-item-button" className="custome-class" title="" onClick = {(e)=>console.log("Toggle",e)}>
+                              <Dropdown.Item as="button">Available</Dropdown.Item>
+                              <Dropdown.Item as="button">Not Available</Dropdown.Item>
+                            </DropdownButton> */}
+                                <Switch checked = {item.status == "Available"} size="small" onChange={(e)=>changeAvailability(e , item.status , item._id)}/>
+                          
+                          </div>
+                          {item.name}
                         </div>
-                        Shahi paneer
-                      </div>
-                      <div class="image">
-                        <img src="https://i.ndtvimg.com/i/2016-09/tofu-625_625x350_61474273627.jpg" />
-                      </div>
-                      <div class="content">
-                        <span class="right floated">
-                          <i class="rupee sign icon"></i>
-                          150
-                        </span>
-                        {/* <i class="list ul icon"></i> */}
-                        Vegetarian
-                      </div>
-                      <div class="extra content">
-                        {/* <div class="ui large transparent left icon input"> */}
-                        {/* <i class="heart outline icon"></i>
-      <input type="text" placeholder="Add Comment..."/> */}
-                        <div class="ui bottom attached button" tabindex="0">
-                          Bottom
+                        <div class="image">
+                          <img src={item.photo} />
                         </div>
-                        {/* </div> */}
+                        <div class="content">
+                          <span class="right floated">
+                            <i class="rupee sign icon"></i>
+                            {item.price}
+                          </span>
+                          {/* <i class="list ul icon"></i> */}
+                          {item.category}
+                        </div>
+                        <div class="extra content">
+                          {/* <div class="ui large transparent left icon input"> */}
+                          {/* <i class="heart outline icon"></i>
+                     <input type="text" placeholder="Add Comment..."/> */}
+                          <div class="ui bottom attached button" tabindex="0" onClick = {()=>deleteItem(item._id)} >
+                             Delete Item
+                            </div>
+                          {/* </div> */}
+                        </div>
                       </div>
-                    </div>
+                    ))}
 
                     {/* <---------------- start fake cards----------------> */}
 
-                    <div class="ui card">
-                      <div class="content">
-                        {/* <div class="right floated meta">14h</div> */}
-                        {/* <img class="ui avatar image" src="/images/avatar/large/elliot.jpg"/> */}
-                        Shahi paneer
-                      </div>
-                      <div class="image">
-                        <img src="https://i.ndtvimg.com/i/2016-09/tofu-625_625x350_61474273627.jpg" />
-                      </div>
-                      <div class="content">
-                        <span class="right floated">
-                          <i class="rupee sign icon"></i>
-                          150
-                        </span>
-                        {/* <i class="list ul icon"></i> */}
-                        Vegetarian
-                      </div>
-                      <div class="extra content">
-                        {/* <div class="ui large transparent left icon input"> */}
-                        {/* <i class="heart outline icon"></i>
-      <input type="text" placeholder="Add Comment..."/> */}
-                        <div class="ui bottom attached button" tabindex="0">
-                          Bottom
-                        </div>
-                        {/* </div> */}
-                      </div>
-                    </div>
-                    <div class="ui card">
-                      <div class="content">
-                        {/* <div class="right floated meta">14h</div> */}
-                        {/* <img class="ui avatar image" src="/images/avatar/large/elliot.jpg"/> */}
-                        Shahi paneer
-                      </div>
-                      <div class="image">
-                        <img src="https://i.ndtvimg.com/i/2016-09/tofu-625_625x350_61474273627.jpg" />
-                      </div>
-                      <div class="content">
-                        <span class="right floated">
-                          <i class="rupee sign icon"></i>
-                          150
-                        </span>
-                        {/* <i class="list ul icon"></i> */}
-                        Vegetarian
-                      </div>
-                      <div class="extra content">
-                        {/* <div class="ui large transparent left icon input"> */}
-                        {/* <i class="heart outline icon"></i>
-      <input type="text" placeholder="Add Comment..."/> */}
-                        <div class="ui bottom attached button" tabindex="0">
-                          Bottom
-                        </div>
-                        {/* </div> */}
-                      </div>
-                    </div>
-                    <div class="ui card">
-                      <div class="content">
-                        {/* <div class="right floated meta">14h</div> */}
-                        {/* <img class="ui avatar image" src="/images/avatar/large/elliot.jpg"/> */}
-                        Shahi paneer
-                      </div>
-                      <div class="image">
-                        <img src="https://i.ndtvimg.com/i/2016-09/tofu-625_625x350_61474273627.jpg" />
-                      </div>
-                      <div class="content">
-                        <span class="right floated">
-                          <i class="rupee sign icon"></i>
-                          150
-                        </span>
-                        {/* <i class="list ul icon"></i> */}
-                        Vegetarian
-                      </div>
-                      <div class="extra content">
-                        {/* <div class="ui large transparent left icon input"> */}
-                        {/* <i class="heart outline icon"></i>
-      <input type="text" placeholder="Add Comment..."/> */}
-                        <div class="ui bottom attached button" tabindex="0">
-                          Bottom
-                        </div>
-                        {/* </div> */}
-                      </div>
-                    </div>
-                    <div class="ui card">
-                      <div class="content">
-                        {/* <div class="right floated meta">14h</div> */}
-                        {/* <img class="ui avatar image" src="/images/avatar/large/elliot.jpg"/> */}
-                        Shahi paneer
-                      </div>
-                      <div class="image">
-                        <img src="https://i.ndtvimg.com/i/2016-09/tofu-625_625x350_61474273627.jpg" />
-                      </div>
-                      <div class="content">
-                        <span class="right floated">
-                          <i class="rupee sign icon"></i>
-                          150
-                        </span>
-                        {/* <i class="list ul icon"></i> */}
-                        Vegetarian
-                      </div>
-                      <div class="extra content">
-                        {/* <div class="ui large transparent left icon input"> */}
-                        {/* <i class="heart outline icon"></i>
-      <input type="text" placeholder="Add Comment..."/> */}
-                        <div class="ui bottom attached button" tabindex="0">
-                          Bottom
-                        </div>
-                        {/* </div> */}
-                      </div>
-                    </div>
-                    <div class="ui card">
-                      <div class="content">
-                        {/* <div class="right floated meta">14h</div> */}
-                        {/* <img class="ui avatar image" src="/images/avatar/large/elliot.jpg"/> */}
-                        Shahi paneer
-                      </div>
-                      <div class="image">
-                        <img src="https://i.ndtvimg.com/i/2016-09/tofu-625_625x350_61474273627.jpg" />
-                      </div>
-                      <div class="content">
-                        <span class="right floated">
-                          <i class="rupee sign icon"></i>
-                          150
-                        </span>
-                        {/* <i class="list ul icon"></i> */}
-                        Vegetarian
-                      </div>
-                      <div class="extra content">
-                        {/* <div class="ui large transparent left icon input"> */}
-                        {/* <i class="heart outline icon"></i>
-      <input type="text" placeholder="Add Comment..."/> */}
-                        <div class="ui bottom attached button" tabindex="0">
-                          Bottom
-                        </div>
-                        {/* </div> */}
-                      </div>
-                    </div>
-                    <div class="ui card">
-                      <div class="content">
-                        {/* <div class="right floated meta">14h</div> */}
-                        {/* <img class="ui avatar image" src="/images/avatar/large/elliot.jpg"/> */}
-                        Shahi paneer
-                      </div>
-                      <div class="image">
-                        <img src="https://i.ndtvimg.com/i/2016-09/tofu-625_625x350_61474273627.jpg" />
-                      </div>
-                      <div class="content">
-                        <span class="right floated">
-                          <i class="rupee sign icon"></i>
-                          150
-                        </span>
-                        {/* <i class="list ul icon"></i> */}
-                        Vegetarian
-                      </div>
-                      <div class="extra content">
-                        {/* <div class="ui large transparent left icon input"> */}
-                        {/* <i class="heart outline icon"></i>
-      <input type="text" placeholder="Add Comment..."/> */}
-                        <div class="ui bottom attached button" tabindex="0">
-                          Bottom
-                        </div>
-                        {/* </div> */}
-                      </div>
-                    </div>
                     {/* <---------------- end fake cards----------------> */}
                   </div>
                 </div>
