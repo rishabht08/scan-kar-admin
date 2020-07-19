@@ -3,7 +3,7 @@ import Header from "../layout/Header";
 import Sidebar from "../layout/Sidebar";
 import { Route } from "react-router-dom";
 import Loader from "../layout/Loader";
-import { Button, Form, Col } from "react-bootstrap";
+import { Button, Form, Col, DropdownButton, DropdownItem } from "react-bootstrap";
 import "../assets/css/app.css";
 import shopData from "../dummy-shop-data.json";
 
@@ -15,9 +15,11 @@ import jsPDF from "jspdf";
 import Select from "react-select";
 import Axios from "axios";
 import swal from "sweetalert";
-// import { colourOptions } from '../data';
 import { Dropdown } from "semantic-ui-react";
-// import { colourOptions, groupedOptions } from '../data';
+
+
+
+
 
 const groupStyles = {
   display: "flex",
@@ -297,8 +299,13 @@ const AppLayout = (props) => {
                   <div className="menu-card-grid">
                     <div class="ui card">
                       <div class="content">
-                        {/* <div class="right floated meta">14h</div> */}
-                        {/* <img class="ui avatar image" src="/images/avatar/large/elliot.jpg"/> */}
+                        <div style={{float: "right"}}>
+                        <DropdownButton id="dropdown-item-button" className="custome-class" title="">
+                          <Dropdown.Item as="button">Action</Dropdown.Item>
+                           <Dropdown.Item as="button">Another action</Dropdown.Item>
+                        </DropdownButton>
+
+                        </div>
                         Shahi paneer
                       </div>
                       <div class="image">

@@ -5,6 +5,8 @@
   "homepage": "",
   "dependencies": {
     "@babel/polyfill": "^7.10.4",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "axios": "^0.19.2",
     "bootstrap-scss": "^4.5.0",
     "feather-icons": "^4.26.0",
@@ -26,6 +28,7 @@
     "reactstrap": "^8.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "rsuite": "^4.8.0",
     "semantic-ui-react": "^0.88.2",
     "styled-components": "^5.0.1",
     "sweetalert": "^2.1.2",
