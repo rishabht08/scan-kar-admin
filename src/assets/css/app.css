@@ -23,3 +23,9 @@
 .main-header-left.d-none.d-lg-block {
     padding: 0;
 }
+
+.menu-card-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    grid-gap: 1.5rem;
+}
