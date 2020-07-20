@@ -69,9 +69,9 @@ const Samplepage = (props) => {
                   ))}
                   <div>
 
-                    <p>Order Type: {order.orderType}</p>
+                    {/* <p>Order Type: {order.orderType}</p>
                     {order.orderType == "Dine In" &&
-                      <p>Table: {order.noOfSeatsRequested}</p>}
+                      <p>Table: {order.noOfSeatsRequested}</p>} */}
                     <p>Amount: Rs. {order.price}</p>
                   </div>
 
