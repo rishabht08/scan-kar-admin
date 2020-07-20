@@ -12,7 +12,7 @@ const StatusDropdown = (props) => {
    }
    return (
       <div className="header-menu" onClick={getPendingPaymemnts}>
-         Dinein / Take away
+         Total Sales
          {/* <DropdownToggle caret>
    Category
 
