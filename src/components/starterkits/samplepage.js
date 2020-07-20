@@ -45,12 +45,12 @@ const Samplepage = (props) => {
         <div className="grid-addjust">
 
               <Card>
-                <CardHeader>
+                {/* <CardHeader>
                   <h5>Table No. {index + 1} </h5>
-                  <a style={{marginLeft: "15px"}} class="ui orange right ribbon label">Dinein / Take away</a>
-                  {/* <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span> */}
-                </CardHeader>
+             
+                </CardHeader> */}
                 <CardBody style={{"background-color": "#ffffff"}}>
+              <a style={{marginLeft: "15px"}} class="ui orange right ribbon label">{order.orderType=="Dine In" ? `Dinein / ${order.noOfSeatsRequested}` : "Take away"}</a>
                   <h5>Ordered Items</h5>
                   {order.orders.map(order => (
                     <div>
