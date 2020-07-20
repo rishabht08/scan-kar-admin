@@ -42,13 +42,15 @@ const Samplepage = (props) => {
         <Row>
           <Col sm="12">
             {props.orders.map((order, index) => (
+        <div className="grid-addjust">
 
               <Card>
                 <CardHeader>
-                  <h5>User {index + 1} </h5>
+                  <h5>Table No. {index + 1} </h5>
+                  <a style={{marginLeft: "15px"}} class="ui orange right ribbon label">Dinein / Take away</a>
                   {/* <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span> */}
                 </CardHeader>
-                <CardBody style={order.orderType != "Dine In" ? {"background-color": "#00d400"} : {"background-color": "#ffffff"}}>
+                <CardBody style={{"background-color": "#ffffff"}}>
                   <h5>Ordered Items</h5>
                   {order.orders.map(order => (
                     <div>
@@ -81,6 +83,7 @@ const Samplepage = (props) => {
 
                 }
               </Card>
+              </div>
 
             ))}
 

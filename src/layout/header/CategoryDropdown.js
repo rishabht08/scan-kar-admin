@@ -14,7 +14,7 @@ const CategoryDropdown = (props) =>  {
     }
     return(
         <div className = "header-menu" onClick = {getOrders}>
-            Orders
+           New Orders
         {/* <DropdownToggle caret>
              Category
    
