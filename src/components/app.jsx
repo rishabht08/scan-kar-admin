@@ -3,8 +3,8 @@ import Header from "../layout/Header";
 import Sidebar from "../layout/Sidebar";
 import { Route } from "react-router-dom";
 import Loader from "../layout/Loader";
-import {  Switch  } from  "antd";
-import "./app.css"
+import { Switch } from "antd";
+import "./app.css";
 import {
   Button,
   Form,
@@ -192,40 +192,39 @@ const AppLayout = (props) => {
     );
   };
 
-  const changeAvailability = (e , status , id) =>{
-    if(status == "Available"){
+  const changeAvailability = (e, status, id) => {
+    if (status == "Available") {
       swal({
         title: "Are you sure?",
         text: "This Will make this item unavailable",
         icon: "warning",
         buttons: true,
         dangerMode: true,
-      })
-      .then((willDelete) => {
+      }).then((willDelete) => {
         if (willDelete) {
-          Axios.patch(`https://scankar.herokuapp.com/api/v1/products/${id}` , {status:"unAvailable"}).then(()=>{
-            loadMenu()
-          })
-        } 
+          Axios.patch(`https://scankar.herokuapp.com/api/v1/products/${id}`, {
+            status: "unAvailable",
+          }).then(() => {
+            loadMenu();
+          });
+        }
       });
-
+    } else {
+      Axios.patch(`https://scankar.herokuapp.com/api/v1/products/${id}`, {
+        status: "Available",
+      }).then(() => {
+        loadMenu();
+      });
     }
+  };
 
-    else{
-      Axios.patch(`https://scankar.herokuapp.com/api/v1/products/${id}` , {status:"Available"}).then(()=>{
-        loadMenu()
-      })
-
-    }
-    
-  }
-
-  const deleteItem = (id) =>{
-    Axios.delete(`https://scankar.herokuapp.com/api/v1/products/${id}`).then(()=>{
-      loadMenu()
-    })
-
-  }
+  const deleteItem = (id) => {
+    Axios.delete(`https://scankar.herokuapp.com/api/v1/products/${id}`).then(
+      () => {
+        loadMenu();
+      }
+    );
+  };
 
   return (
     // <Fragment>
@@ -368,13 +367,13 @@ const AppLayout = (props) => {
                       <div class="ui card">
                         <div class="content">
                           <div style={{ float: "right" }}> */}
-                            {/* <DropdownButton id="dropdown-item-button" className="custome-class" title="" onClick = {(e)=>console.log("Toggle",e)}>
+                    {/* <DropdownButton id="dropdown-item-button" className="custome-class" title="" onClick = {(e)=>console.log("Toggle",e)}>
                               <Dropdown.Item as="button">Available</Dropdown.Item>
                               <Dropdown.Item as="button">Not Available</Dropdown.Item>
                             </DropdownButton> */}
-                                {/* <Switch checked = {item.status == "Available"} size="small" onChange={(e)=>changeAvailability(e , item.status , item._id)}/> */}
-                          
-                          {/* </div>
+                    {/* <Switch checked = {item.status == "Available"} size="small" onChange={(e)=>changeAvailability(e , item.status , item._id)}/> */}
+
+                    {/* </div>
                           {item.name}
                         </div>
                         <div class="image">
@@ -385,46 +384,55 @@ const AppLayout = (props) => {
                             <i class="rupee sign icon"></i>
                             {item.price}
                           </span> */}
-                          {/* <i class="list ul icon"></i> */}
-                          {/* {item.category}
+                    {/* <i class="list ul icon"></i> */}
+                    {/* {item.category}
                         </div>
                         <div class="extra content"> */}
-                          {/* <div class="ui large transparent left icon input"> */}
-                          {/* <i class="heart outline icon"></i>
+                    {/* <div class="ui large transparent left icon input"> */}
+                    {/* <i class="heart outline icon"></i>
                      <input type="text" placeholder="Add Comment..."/> */}
-                          {/* <div class="ui bottom attached button" tabindex="0" onClick = {()=>deleteItem(item._id)} >
+                    {/* <div class="ui bottom attached button" tabindex="0" onClick = {()=>deleteItem(item._id)} >
                              Delete Item
                             </div> */}
-                          {/* </div> */}
-                        {/* </div>
+                    {/* </div> */}
+                    {/* </div>
                       </div>
                     ))} */}
 
                     {/* <---------------- start fake cards----------------> */}
                     <table className="ui purple table">
-  <thead>
-    <tr><th>Item Name</th>
-    <th>Category</th>
-    <th>Price</th>
-    <th>&</th>
-
-  </tr></thead><tbody>
-    <tr>
-      <td>Apples</td>
-      <td>200</td>
-      <td>0g</td>
-      <td>0g</td>
-
-    </tr>
-    <tr>
-      <td>Orange</td>
-      <td>310</td>
-      <td>0g</td>
-      <td>0g</td>
-
-    </tr>
-  </tbody>
-</table>
+                      <thead>
+                        <tr>
+                          <th>Item Name</th>
+                          <th>Category</th>
+                          <th>Price</th>
+                          <th>Availability</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {menu.map((item, index) => (
+                          <tr>
+                            <td>{item.name}</td>
+                            <td>{item.category}</td>
+                            <td><i className="rupee sign icon"></i>{item.price}</td>
+                            <td style = {{"padding-left" : "3%"}}>
+                              <Switch
+                                checked={item.status == "Available"}
+                                size="small"
+                                onChange={(e) =>
+                                  changeAvailability(e, item.status, item._id)
+                                }
+                              />{" "}
+                            </td>
+                            <td style = {{"cursor" : "pointer"}}>
+                            <i className="fa fa-trash fa-2x" aria-hidden="true" onClick = {()=>deleteItem(item._id)}></i>
+                         
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
                     {/* <---------------- end fake cards----------------> */}
                   </div>
                 </div>
