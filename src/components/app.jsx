@@ -364,17 +364,17 @@ const AppLayout = (props) => {
                   </Form>
                   <div className="menu-card-grid">
                     {/* <------------- Cards Start ----------------> */}
-                    {menu.map((item, index) => (
+                    {/* {menu.map((item, index) => (
                       <div class="ui card">
                         <div class="content">
-                          <div style={{ float: "right" }}>
+                          <div style={{ float: "right" }}> */}
                             {/* <DropdownButton id="dropdown-item-button" className="custome-class" title="" onClick = {(e)=>console.log("Toggle",e)}>
                               <Dropdown.Item as="button">Available</Dropdown.Item>
                               <Dropdown.Item as="button">Not Available</Dropdown.Item>
                             </DropdownButton> */}
-                                <Switch checked = {item.status == "Available"} size="small" onChange={(e)=>changeAvailability(e , item.status , item._id)}/>
+                                {/* <Switch checked = {item.status == "Available"} size="small" onChange={(e)=>changeAvailability(e , item.status , item._id)}/> */}
                           
-                          </div>
+                          {/* </div>
                           {item.name}
                         </div>
                         <div class="image">
@@ -384,24 +384,47 @@ const AppLayout = (props) => {
                           <span class="right floated">
                             <i class="rupee sign icon"></i>
                             {item.price}
-                          </span>
+                          </span> */}
                           {/* <i class="list ul icon"></i> */}
-                          {item.category}
+                          {/* {item.category}
                         </div>
-                        <div class="extra content">
+                        <div class="extra content"> */}
                           {/* <div class="ui large transparent left icon input"> */}
                           {/* <i class="heart outline icon"></i>
                      <input type="text" placeholder="Add Comment..."/> */}
-                          <div class="ui bottom attached button" tabindex="0" onClick = {()=>deleteItem(item._id)} >
+                          {/* <div class="ui bottom attached button" tabindex="0" onClick = {()=>deleteItem(item._id)} >
                              Delete Item
-                            </div>
+                            </div> */}
                           {/* </div> */}
-                        </div>
+                        {/* </div>
                       </div>
-                    ))}
+                    ))} */}
 
                     {/* <---------------- start fake cards----------------> */}
+                    <table className="ui purple table">
+  <thead>
+    <tr><th>Item Name</th>
+    <th>Category</th>
+    <th>Price</th>
+    <th>&</th>
 
+  </tr></thead><tbody>
+    <tr>
+      <td>Apples</td>
+      <td>200</td>
+      <td>0g</td>
+      <td>0g</td>
+
+    </tr>
+    <tr>
+      <td>Orange</td>
+      <td>310</td>
+      <td>0g</td>
+      <td>0g</td>
+
+    </tr>
+  </tbody>
+</table>
                     {/* <---------------- end fake cards----------------> */}
                   </div>
                 </div>
