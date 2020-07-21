@@ -6,6 +6,7 @@ import logo_light from '../assets/images/scan-kar-logo.png'
 import { MENUITEMS } from './sidebar/menu';
 import {Link} from 'react-router-dom'
 import configDB from '../data/customizer/config';
+import myApp from "../FirebaseConfig"
 
 const Sidebar = () => {
     const [mainmenu, setMainMenu] = useState(MENUITEMS);
@@ -128,6 +129,14 @@ const Sidebar = () => {
                                     </a>
                                     
                                     }
+                                    { (menuItem.type === 'sub4') && <a style={{marginTop:"28rem"}} className="sidebar-header" onClick={() => myApp.auth().signOut()}>
+                                        <menuItem.icon />
+                                <span>{menuItem.title}</span>
+                                        <i className="fa fa-angle-right pull-right"></i>
+                                    </a>
+                                    
+                                    }
+
                                     {(menuItem.type === 'link') ?
                                         <Link className={`sidebar-header ${menuItem.active ? 'active' :''}`}  onClick={() => toggletNavActive(menuItem)} to={menuItem.path}>
                                             <menuItem.icon /><span>{menuItem.title}</span>

@@ -1,4 +1,4 @@
-import {Home , Anchor, PlusCircle} from 'react-feather';
+import {Home , Anchor, PlusCircle, LogOut} from 'react-feather';
 
 export const MENUITEMS = [
     {
@@ -13,6 +13,11 @@ export const MENUITEMS = [
     },
     {
         title: 'Add Menu', icon:PlusCircle , type: 'sub3', active: false, path: `${process.env.PUBLIC_URL}`
+          
+    },
+
+    {
+        title: 'Sign Out', icon:LogOut , type: 'sub4', active: false, path: `${process.env.PUBLIC_URL}`
           
     },
     // {

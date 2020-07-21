@@ -2,7 +2,7 @@ import React,{Fragment,useState,useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import './index.css';
-import App from './components/app';
+import App from './Router/index';
 import {BrowserRouter,Switch,Redirect} from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux'
