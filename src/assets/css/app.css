@@ -36,3 +36,18 @@
 .custome-class{
     margin-bottom: 0em;
 }
+
+
+@media screen and (max-width: 420px) {
+    .generate{
+    margin-left:0rem;
+    padding:2rem;
+    }
+
+    .row {
+        margin-left: 0px;
+    }
+    .s-c-custome {
+        margin-left: 0px;
+    }
+}
