@@ -9,6 +9,7 @@ import {
   Button,
   Form,
   Col,
+  Table,
   DropdownButton,
   DropdownItem,
 } from "react-bootstrap";
@@ -400,7 +401,7 @@ const AppLayout = (props) => {
                     ))} */}
 
                     {/* <---------------- start fake cards----------------> */}
-                    <table className="ui purple table">
+                    <Table responsive>
                       <thead>
                         <tr>
                           <th>Item Name</th>
@@ -432,7 +433,8 @@ const AppLayout = (props) => {
                           </tr>
                         ))}
                       </tbody>
-                    </table>
+                    </Table>
+
                     {/* <---------------- end fake cards----------------> */}
                   </div>
                 </div>

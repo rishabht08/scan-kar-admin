@@ -1,0 +1,192 @@
+[33mcommit e2801cc99eb94679ab8f38fbc6f63d61beaf9d8f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: zuaam <nriittech@gmail.com>
+Date:   Tue Jul 21 15:57:46 2020 +0530
+
+    responsive conflict fixed
+
+[33mcommit 7bda98066bdccac8dcc3094b80d24507eac6f193[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Tue Jul 21 03:18:01 2020 +0530
+
+    Total Sales Option Added
+
+[33mcommit 8e45a1ba4e557e33433a1288e1328e22464d14bf[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Tue Jul 21 02:35:36 2020 +0530
+
+    Stylings
+
+[33mcommit fcb7bab7816f10181b662a67af143b33d358e775[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Tue Jul 21 02:18:38 2020 +0530
+
+    Final
+
+[33mcommit a782d9c5196d4e25863e4d6e026ae671ad5aff8c[m
+Merge: 717aabd 971c5da
+Author: zuaam <nriittech@gmail.com>
+Date:   Tue Jul 21 00:14:09 2020 +0530
+
+    Merge branch 'master' of https://github.com/rishabht08/scan-kar-admin
+
+[33mcommit 717aabd419dedf80d7bf3770a2c041021176695e[m
+Author: zuaam <nriittech@gmail.com>
+Date:   Tue Jul 21 00:10:49 2020 +0530
+
+    i have add the table
+
+[33mcommit 971c5da622255451ee074c9b1b063b1072a042fa[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Mon Jul 20 22:14:20 2020 +0530
+
+    Changes in main dashboard
+
+[33mcommit b907a12af54bbb28a7ac475e1714ff208d2bbd07[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Mon Jul 20 22:11:40 2020 +0530
+
+    Changes in main dashboard
+
+[33mcommit 61fb37e99d78f5d25a365eb3bb4dc02b16fac55c[m
+Author: zuaam <nriittech@gmail.com>
+Date:   Mon Jul 20 20:48:17 2020 +0530
+
+    some styles fixed
+
+[33mcommit 3b1c2a421eb9e2c1bd16268485a161ac990a1501[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Mon Jul 20 04:15:34 2020 +0530
+
+    Major Changes
+
+[33mcommit 5338db1073ca5974edece5130673450c4e88cadc[m
+Author: zuaam <nriittech@gmail.com>
+Date:   Sun Jul 19 22:56:21 2020 +0530
+
+    dropdown button
+
+[33mcommit dc7b8ddf9ac83566c92bc529ad56ab9c3a6281fe[m
+Author: zuaam <nriittech@gmail.com>
+Date:   Sun Jul 19 18:51:18 2020 +0530
+
+    dropdown button and card added
+
+[33mcommit cec79fc65ed19e009d2d6a19522e13ce5d04db15[m
+Author: zuaam <nriittech@gmail.com>
+Date:   Fri Jul 17 18:18:55 2020 +0530
+
+    Logo changed
+
+[33mcommit 30751d5fa02c5185d520e7975996e3fe94e084af[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Fri Jul 17 14:19:04 2020 +0530
+
+    Final
+
+[33mcommit fd3ebdf5cd8dc396a214259462e5c471eacb6682[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Fri Jul 17 14:02:25 2020 +0530
+
+    Final
+
+[33mcommit a25ec72f3b9486f0e6f26f650601d62b96b73090[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Thu Jul 16 18:19:46 2020 +0530
+
+    Final
+
+[33mcommit c9054a0ced9b18ae9e8bb0c7cc8f5a9a6c3ea1e1[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Thu Jul 16 14:28:21 2020 +0530
+
+    Final
+
+[33mcommit a7b6ee9c7f8543a24c46b3d3d2f835d920d431bb[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Thu Jul 16 04:18:09 2020 +0530
+
+    Final Admin
+
+[33mcommit 735983946dc9d26a25ce7a32efe3893cd63e2ea9[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Thu Jul 16 02:45:43 2020 +0530
+
+    Table Number added to admin
+
+[33mcommit a822970b433ac8a513b8a379cef168b95f68b97b[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Wed Jul 15 23:19:27 2020 +0530
+
+    Add menu added
+
+[33mcommit 77f134bb94fec438faa59c48a9bcd9a4fa32c58e[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Wed Jul 15 05:18:22 2020 +0530
+
+    Workin Api
+
+[33mcommit 137f213c479fa4b5ecf7abbf2d4669e57743b6fd[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Wed Jul 15 05:03:33 2020 +0530
+
+    Auto generate QR code
+
+[33mcommit cabdcff654319ccc94d381207d21e5dad5b2dd3e[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Thu Jul 9 02:52:25 2020 +0530
+
+    Changes
+
+[33mcommit 4302d3c844a65ebfd63e591c02d24aca94e9d6e4[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Thu Jul 9 02:34:32 2020 +0530
+
+    Change to react-script
+
+[33mcommit 80f976fad21a39f6242f0f4e7f39270e9b1024a0[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Wed Jul 8 13:06:13 2020 +0530
+
+    webpack heap
+
+[33mcommit caf72edda1f26610dce49707ba60565d348626d1[m
+Author: Lakshya Tyagi <tyagi.lakshay@gmail.com>
+Date:   Tue Jul 7 22:10:00 2020 +0530
+
+    checkpoint 2
+
+[33mcommit 4055445b2ffc5cdeea0da5b416268ba861ea1ba3[m
+Author: Lakshya Tyagi <tyagi.lakshay@gmail.com>
+Date:   Tue Jul 7 22:03:10 2020 +0530
+
+    checkpoint
+
+[33mcommit d9495068ed3fc1ac39dbd007e76a9d38178b2c10[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Tue Jul 7 18:17:15 2020 +0530
+
+    Error
+
+[33mcommit c285b28ffa824340eca5f13ac582c1b21540a52d[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Tue Jul 7 02:00:38 2020 +0530
+
+    Final
+
+[33mcommit 6056610f54d4737ec4c36889d887940048665a66[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Mon Jul 6 05:02:52 2020 +0530
+
+    Final commit
+
+[33mcommit ab3e97d02af939c0cea37196fa9b0ed9eb2cbcf1[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Mon Jul 6 04:27:49 2020 +0530
+
+    Final
+
+[33mcommit 71adc6f66ab4250b02f03ae4bb6d4caff8e73e87[m
+Author: Rishab <rishabht123@gmail.com>
+Date:   Mon Jul 6 04:23:32 2020 +0530
+
+    Final Commit
