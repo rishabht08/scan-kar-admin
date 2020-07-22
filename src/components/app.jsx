@@ -302,7 +302,7 @@ const AppLayout = (props) => {
                         <Form.Control
                           type="text"
                           id="name"
-                          placeholder="Enter menu name"
+                          placeholder="Enter item name"
                           onChange={(e) => onImputChange(e)}
                           value={name}
                         />
@@ -313,7 +313,7 @@ const AppLayout = (props) => {
                         <Form.Control
                           type="number"
                           id="price"
-                          placeholder="Enter menu price"
+                          placeholder="Enter price"
                           onChange={(e) => onImputChange(e)}
                           value={price}
                         />
@@ -350,7 +350,7 @@ const AppLayout = (props) => {
                       <Form.Group as={Col} controlId="formGridEmail">
                         <Form.Label>Menu Item Image</Form.Label>
                         <Form.Control
-                          style={{ width: "20%" }}
+                          style={{ width: "40%" }}
                           type="file"
                           placeholder="Enter menu Image"
                           onChange={(e) => uploadImage(e)}
@@ -404,9 +404,10 @@ const AppLayout = (props) => {
                     <Table responsive>
                       <thead>
                         <tr>
-                          <th>Item Name</th>
-                          <th>Category</th>
+                          <th>Name</th>
                           <th>Price</th>
+
+                          <th>Category</th>
                           <th>Availability</th>
                           <th></th>
                         </tr>
@@ -415,8 +416,8 @@ const AppLayout = (props) => {
                         {menu.map((item, index) => (
                           <tr>
                             <td>{item.name}</td>
-                            <td>{item.category}</td>
                             <td><i className="rupee sign icon"></i>{item.price}</td>
+                            <td>{item.category}</td>
                             <td style = {{"padding-left" : "3%"}}>
                               <Switch
                                 checked={item.status == "Available"}

@@ -12,7 +12,7 @@ export const MENUITEMS = [
           
     },
     {
-        title: 'Add Menu', icon:PlusCircle , type: 'sub3', active: false, path: `${process.env.PUBLIC_URL}`
+        title: 'Menu', icon:PlusCircle , type: 'sub3', active: false, path: `${process.env.PUBLIC_URL}`
           
     },
 
