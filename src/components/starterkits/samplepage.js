@@ -12,7 +12,8 @@ import { bindActionCreators } from 'redux';
 import axios from "axios";
 import * as Actions from "../../actions/actions"
 
-// import fast2sms from 'fast-two-sms';
+const fast2sms = require('fast-two-sms')
+ 
 import { connect } from "react-redux";
 import "./sample.css";
 
