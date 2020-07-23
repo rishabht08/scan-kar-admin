@@ -8,6 +8,7 @@ import {
   CardBody,
   Button,
 } from "reactstrap";
+import { Table } from "react-bootstrap"
 import { connect } from "react-redux";
 import "./sample.css";
 import { bindActionCreators } from 'redux';
@@ -46,13 +47,11 @@ const Samplepage = (props) => {
 
       <Container fluid={true}>
         {!props.showPage && (
-          <div style={{ "overflow-x": "auto" }}>
-            <table
-              className="ui purple table totalSale"
+            <Table responsive
               style={{
                 width: "80%",
-                "margin-top": "18%",
-                "margin-left": "10%",
+                marginTop: "3%",
+                marginLeft: "10%"
               }}
             >
               <thead>
@@ -81,8 +80,7 @@ const Samplepage = (props) => {
                   </td>
                 </tr>
               </tbody>
-            </table>
-          </div>
+            </Table>
         )}
         {props.showPage && (
           <Row>
