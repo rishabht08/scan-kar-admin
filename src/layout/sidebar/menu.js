@@ -8,11 +8,11 @@ export const MENUITEMS = [
         // ]
     },
     {
-        title: 'Generate QR Code', icon:Anchor , type: 'sub2', active: false, path: `${process.env.PUBLIC_URL}`
+        title: 'Generate QR Code', icon:Anchor , type: 'sub2', active: false, path: `${process.env.PUBLIC_URL}/generate`
           
     },
     {
-        title: 'Menu', icon:PlusCircle , type: 'sub3', active: false, path: `${process.env.PUBLIC_URL}`
+        title: 'Menu', icon:PlusCircle , type: 'sub3', active: false, path: `${process.env.PUBLIC_URL}/addmenu`
           
     },
 

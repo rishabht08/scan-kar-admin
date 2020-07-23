@@ -16,10 +16,20 @@ const SignUp = ({ onSubmit }) => {
         <i className='fas fa-lock'></i>
         <input type='password' placeholder='Password' name='password' />
       </div>
-      <button type='submit' className='btn'>
-        Sign Up
+
+  
+        <label for="type">Choose your Category</label><br></br><br></br>
+        <input type="radio" id="restaurant" name="type" value="restaurant"/>
+          <label for="restaurant">Restaurant</label><br></br>
+            <input type="radio" id="hotel" name="type" value="hotel"/>
+              <label for="hotel">Hotel</label><br></br>
+     
+
+
+              <button type='submit' className='btn'>
+                Sign Up
       </button>
-      
+
     </form>
   );
 };

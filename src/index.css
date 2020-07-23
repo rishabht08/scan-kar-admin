@@ -16,6 +16,18 @@ img{
 
 .header-menu{
     cursor: pointer;
+    padding:1rem;
+    
+}
+
+.header-menu-active{
+    cursor: pointer;
+    padding:1rem;
+    
+    
+    background: rgb(168, 168, 168);
+    border-radius: 30px
+    
 }
 
 .flexrow{

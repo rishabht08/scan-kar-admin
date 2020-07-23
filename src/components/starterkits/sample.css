@@ -5,3 +5,8 @@
     width: 80%;
 
 }
+
+.flex-btn{
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 // import { Dropdown, DropdownToggle, DropdownMenu } from 'reactstrap';
 import { connect } from 'react-redux';
+import * as Actions from "../../actions/actions"
+import { bindActionCreators } from 'redux';
 const StatusDropdown = (props) => {
    const [dropdownOpen, setDropdownOpen] = useState(false);
    const toggle = () => setDropdownOpen(prevState => !prevState);
 
    const getPendingPaymemnts = () => {
-      props.dispatch({
-         type: "PENDING_PAYMENTS"
+      props.actions.calculateSales().then(res=>{
+         console.log("In sales" , res)
       })
    }
    return (
-      <div className="header-menu" onClick={getPendingPaymemnts}>
+      <div className = {props.sales ? "header-menu-active" : "header-menu"}onClick={getPendingPaymemnts}>
          Total Sales
          {/* <DropdownToggle caret>
    Category
@@ -28,18 +30,18 @@ const StatusDropdown = (props) => {
 
 }
 
-const mapStateToProps = (state) => {
-   console.log("state", state)
-
+const mapStateToProps = (state) =>{
+   return{
+       sales:state.Toggle.sales
+   }
+   
+   
 }
 
 const mapDispatchToProps = (dispatch) => {
-
    return {
-      dispatch
-
-   }
-
-}
+     actions: bindActionCreators(Actions, dispatch)
+ }
+ };
 
 export default connect(mapStateToProps, mapDispatchToProps)(StatusDropdown)

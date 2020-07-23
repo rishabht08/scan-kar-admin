@@ -10,37 +10,34 @@ import {
 } from "reactstrap";
 import { connect } from "react-redux";
 import "./sample.css";
+import { bindActionCreators } from 'redux';
+import * as Actions from "../../actions/actions"
 
 import axios from "axios";
 
 const Samplepage = (props) => {
   useEffect(() => {
-    callOrders();
+    callOrders("Running");
   }, []);
 
-  const callOrders = () => {
-    axios
-      .get("https://scankar.herokuapp.com/api/v1/customer-order")
-      .then((res) => {
-        console.log(res);
-        props.dispatch({
-          type: "ADD_TO_ORDERS",
-          payLoad: res.data.data.orders,
-        });
-      });
+  const callOrders = (type) => {
+
+    props.actions.addOrders(type).then(res => {
+      console.log("redux Save", res)
+    })
   };
 
   const changeStatus = (id, status) => {
-    if (status == "Pending") {
-      axios
-        .patch(
-          `https://scankar.herokuapp.com/api/v1/customer-order/update-order/${id}`,
-          { status: "Placed" }
-        )
-        .then((resp) => {
-          callOrders();
-        });
-    }
+    let process = (status == "Accept") ? "Running" : status == "Reject" ? "Rejected" : "Completed";
+    axios
+      .patch(
+        `https://scankar.herokuapp.com/api/v1/customer-order/update-order/${id}`,
+        { process: process }
+      )
+      .then((resp) => {
+        callOrders(process);
+      });
+
   };
 
   return (
@@ -49,7 +46,7 @@ const Samplepage = (props) => {
 
       <Container fluid={true}>
         {!props.showPage && (
-          <div style="overflow-x:auto;">
+          <div style={{ "overflow-x": "auto" }}>
             <table
               className="ui purple table totalSale"
               style={{
@@ -106,6 +103,7 @@ const Samplepage = (props) => {
                           ? `Dinein / ${order.noOfSeatsRequested}`
                           : "Take away"}
                       </a>
+                      <h4><b>{order.userName ? order.userName : ""}</b></h4>
                       <h5>Ordered Items</h5>
                       {order.orders.map((order) => (
                         <div>
@@ -127,8 +125,9 @@ const Samplepage = (props) => {
                       <p>Table: {order.noOfSeatsRequested}</p>} */}
                         <p>Amount: Rs. {order.price}</p>
                       </div>
+                    <p><b>Special Instructions:</b> {order.instruction == "" ? "None" : order.instruction}</p>
                     </CardBody>
-                    {props.buttonFunctional ? (
+                    {/* {props.buttonFunctional ? (
                       <Button
                         className="s-btn-extrnal-style"
                         color={
@@ -143,16 +142,54 @@ const Samplepage = (props) => {
                           : "Completed"}
                       </Button>
                     ) : (
+                        <Button
+                          className="s-btn-extrnal-style"
+                          color="warning"
+                          size="sm"
+                          block
+                          disabled={true}
+                        >
+                          Pending
+                        </Button>
+                      )} */}
+                    {order.process == "Pending" &&
+                      <div className="flex-btn">
+                        <Button
+                          className="s-btn-extrnal-style"
+                          color="success"
+                          onClick={() => changeStatus(order["_id"], "Accept")}
+                          size="sm"
+                          style = {{width:"100%"}}
+
+                        >
+                          Accept
+                      </Button>
+
+
+                        <Button
+                          className="s-btn-extrnal-style"
+                          color="secondary"
+                          onClick={() => changeStatus(order["_id"], "Reject")}
+                          size="sm"
+                          style = {{width:"100%"}}
+
+                        >
+                          Decline Order
+                      </Button>
+
+                      </div>}
+
+                    {order.process == "Running" &&
+
                       <Button
                         className="s-btn-extrnal-style"
-                        color="warning"
+                        color="success"
+                        onClick={() => changeStatus(order["_id"], "Completed")}
                         size="sm"
-                        block
-                        disabled={true}
+
                       >
-                        Pending
-                      </Button>
-                    )}
+                        Add To Complete
+                      </Button>}
                   </Card>
                 </div>
               ))}
@@ -178,7 +215,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    dispatch,
+    actions: bindActionCreators(Actions, dispatch)
   };
 };
 

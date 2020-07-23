@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 // import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { connect } from 'react-redux';
+import * as Actions from "../../actions/actions"
+import { bindActionCreators } from 'redux';
 
 
 const CategoryDropdown = (props) =>  {
@@ -8,12 +10,10 @@ const CategoryDropdown = (props) =>  {
     const toggle = () => setDropdownOpen(prevState => !prevState);
 
     const getOrders = () =>{
-        props.dispatch({
-            type:"GET_ORDERS"
-        })
+       props.actions.addOrders("Running")
     }
     return(
-        <div className = "header-menu" onClick = {getOrders}>
+        <div className = {props.home ? "header-menu-active" : "header-menu"} onClick = {getOrders}>
            New Orders
         {/* <DropdownToggle caret>
              Category
@@ -31,16 +31,16 @@ const CategoryDropdown = (props) =>  {
 
 const mapStateToProps = (state) =>{
     console.log("state", state)
+    return{
+        home:state.Toggle.home
+    }
     
 }
 
-const mapDispatchToProps = (dispatch) =>{
-
-    return{
-        dispatch
-
-    }
-
-}
+const mapDispatchToProps = (dispatch) => {
+    return {
+      actions: bindActionCreators(Actions, dispatch)
+  }
+  };
 
 export default connect(mapStateToProps , mapDispatchToProps) (CategoryDropdown)
