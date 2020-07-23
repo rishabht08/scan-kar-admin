@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {MENUITEMS} from './sidebar/menu'
 import {Link} from 'react-router-dom'
 import logo_light from '../assets/images/scan-kar-logo.png'
+import {connect} from "react-redux"
 
  export const Header = () => {
 
@@ -22,6 +23,7 @@ import logo_light from '../assets/images/scan-kar-logo.png'
   const [searchResult, setSearchResult] = useState(false);
   // eslint-disable-next-line
   const [searchResultEmpty, setSearchResultEmpty] = useState(false);
+  const [leftBarShow , setLeftBar] = useState(false)
 
   const dispatch = useDispatch();
   const searchTog = useSelector(state => state.Common.searchToggle)
@@ -50,6 +52,8 @@ import logo_light from '../assets/images/scan-kar-logo.png'
     }
     
   useEffect(() => {
+      console.log("page Url" , window.location.href)
+      setLeftBar(window.location.href.includes("/generate") || window.location.href.includes("/addmenu") );
     if (width <= 991) {
         document.querySelector(".page-main-header").className = 'page-main-header open' 
         document.querySelector(".page-sidebar").className = 'page-sidebar open' 
@@ -137,7 +141,8 @@ import logo_light from '../assets/images/scan-kar-logo.png'
             </Label>
             </div>
           </div> 
-            <Leftbar/>
+          {!leftBarShow && <Leftbar/> }
+            
             {/* <Rightbar/> */}
             <form className={`form-inline search-full ${searchTog? 'open': ''}`}>
             <div className="form-group form-control-plaintext">
@@ -189,4 +194,19 @@ import logo_light from '../assets/images/scan-kar-logo.png'
     )
 }
 
-export default Header
+const mapStateToProps = (state , ownProps) =>{
+    console.log("ownProps" , ownProps)
+    return{
+        sales:state.Toggle.sales
+    }
+    
+    
+ }
+ 
+ const mapDispatchToProps = (dispatch) => {
+    return {
+     
+  }
+  };
+ 
+ export default connect(mapStateToProps, mapDispatchToProps)(Header)

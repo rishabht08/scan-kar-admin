@@ -10,7 +10,7 @@
     "antd": "^4.4.3",
     "axios": "^0.19.2",
     "bootstrap-scss": "^4.5.0",
-    "fast-two-sms": "^2.1.0",
+    "fast-two-sms": "^1.0.0",
     "feather-icons": "^4.26.0",
     "firebase": "^7.16.1",
     "html-webpack-plugin": "^4.3.0",

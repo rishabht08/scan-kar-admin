@@ -11,15 +11,11 @@ import {
 import { bindActionCreators } from 'redux';
 import axios from "axios";
 import * as Actions from "../../actions/actions"
-
-const fast2sms = require('fast-two-sms')
- 
 import { connect } from "react-redux";
 import "./sample.css";
 
-const API_KEY_SMS = "KucHqnUEg1iwNszrdGMoSF4x9ZPIhWv3QpB8lfa5JY7OADkyjb0IYWm7DF1XTBx5dUNAts4QORzZyGhw"
-
-
+// const fast2sms = require('fast-two-sms')
+const API_KEY_SMS = "KucHqnUEg1iwNszrdGMoSF4x9ZPIhWv3QpB8lfa5JY7OADkyjb0IYWm7DF1XTBx5dUNAts4QORzZyGhw";
 
 const Samplepage = (props) => {
   useEffect(() => {

@@ -254,7 +254,10 @@ const AppLayout = (props) => {
             path="/generate"
             render={() => {
               return (
+                <div>
+                            <Header />
                 <div className="generate">
+          
                   <div className="shopdetails">
                     <span>
                       <b>Restaurant</b> : {shop.name}
@@ -283,6 +286,7 @@ const AppLayout = (props) => {
                     />
                   </div>
                 </div>
+                </div>
               );
             }}
           ></Route>
@@ -292,7 +296,10 @@ const AppLayout = (props) => {
             path="/addmenu"
             render={() => {
               return (
+                <div>
+                     <Header />
                 <div className="generate">
+                 
                   {/* <Segment>Pellentesque habitant morbi tristique senectus.</Segment> */}
 
                   <Form>
@@ -439,7 +446,9 @@ const AppLayout = (props) => {
                     {/* <---------------- end fake cards----------------> */}
                   </div>
                 </div>
+                </div>
               );
+              
             }}
           ></Route>
 
