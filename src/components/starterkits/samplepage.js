@@ -8,12 +8,17 @@ import {
   CardBody,
   Button,
 } from "reactstrap";
-import { connect } from "react-redux";
-import "./sample.css";
 import { bindActionCreators } from 'redux';
+import axios from "axios";
 import * as Actions from "../../actions/actions"
 
-import axios from "axios";
+// import fast2sms from 'fast-two-sms';
+import { connect } from "react-redux";
+import "./sample.css";
+
+const API_KEY_SMS = "KucHqnUEg1iwNszrdGMoSF4x9ZPIhWv3QpB8lfa5JY7OADkyjb0IYWm7DF1XTBx5dUNAts4QORzZyGhw"
+
+
 
 const Samplepage = (props) => {
   useEffect(() => {
@@ -29,12 +34,19 @@ const Samplepage = (props) => {
 
   const changeStatus = (id, status) => {
     let process = (status == "Accept") ? "Running" : status == "Reject" ? "Rejected" : "Completed";
+    let message  = `Your Order is ${process}`
+    let options = {authorization : API_KEY_SMS , message : message ,  numbers : ['9643710095']} 
+
     axios
       .patch(
         `https://scankar.herokuapp.com/api/v1/customer-order/update-order/${id}`,
         { process: process }
       )
       .then((resp) => {
+        // fast2sms.sendMessage(options).then(res=>{
+        //   // console.log("sent message" , res)
+
+        // })
         callOrders(process);
       });
 
