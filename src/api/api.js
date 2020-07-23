@@ -22,7 +22,7 @@ export async function addOrders(type) {
             break;
         }
 
-        return arr
+        return arr.reverse()
     })
 }
 
