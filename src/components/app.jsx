@@ -15,6 +15,7 @@ import {
 } from "react-bootstrap";
 import "../assets/css/app.css";
 import shopData from "../dummy-shop-data.json";
+import { OutTable, ExcelRenderer } from 'react-excel-renderer';
 
 import { ToastContainer } from "react-toastify";
 import Sample from "../components/starterkits/samplepage";
@@ -26,6 +27,7 @@ import Axios from "axios";
 import swal from "sweetalert";
 import { Dropdown } from "semantic-ui-react";
 import Toggle from "react-toggle";
+import Modal from "../common/modal"
 
 const groupStyles = {
   display: "flex",
@@ -63,6 +65,8 @@ const AppLayout = (props) => {
   const [seats, setSeats] = useState([]);
   const [menu, setMenu] = useState([]);
   const [optionsValue, setOptions] = useState([]);
+  const [modal , setModal] = useState(false)
+  const [menuFile , setMenuFile] = useState(null);
 
   const options = [
     { value: "milkType", label: "milkType" },
@@ -98,7 +102,7 @@ const AppLayout = (props) => {
 
   const loadMenu = () => {
     Axios.get("https://scankar.herokuapp.com/api/v1/products").then((res) => {
-      setMenu(res.data.data.products);
+      setMenu(res.data.data.products.reverse());
     });
   };
 
@@ -226,6 +230,60 @@ const AppLayout = (props) => {
       }
     );
   };
+
+  const showModal = ()=>{
+    setModal(true)
+  }
+
+  const menuUpload = ()=>{
+    return(
+      <div>
+        <span>Sequence of menu details in .CSV file</span><br></br>
+        <span><b>Name----Category----Price</b></span>
+         <input type="file" onChange={(e)=>setMenuFile(e.target.files[0])} style={{ "padding": "10px" }} accept=".csv" />
+      </div>
+    )
+  }
+
+  const uploadAll = ()=>{
+    if(!menuFile){
+      alert("No CSV File Chosen")
+      return;
+    }
+    let fileObj = menuFile;
+
+    //just pass the fileObj as parameter
+    ExcelRenderer(fileObj, (err, resp) => {
+      if(err){
+        alert(err);            
+      }
+      else{
+        console.log("File obj" , resp.rows)
+        let products = [];
+        let data = {};
+        resp.rows.forEach(item=>{
+          data.name = item[0];
+          data.category = item[1];
+          data.price = parseInt(item[2]);
+          data.rating=4.5;
+          data.photo = "https://res.cloudinary.com/dvetb04ra/image/upload/v1595283891/qqmliaurpz3dk9qsezcn.jpg";
+          data.resturant_id = "RES7711000";
+          data.options = ["quantity"]
+          
+
+          products.push(data);
+          data = {};
+
+        })
+        Axios.post("https://scankar.herokuapp.com/api/v1/products/uploadinbulk" , {products}).then(res=>{
+          console.log("Bul uploaded" , res);
+          loadMenu();
+        })
+      }
+      setModal(false)
+    }); 
+  }
+
 
   return (
     // <Fragment>
@@ -369,45 +427,13 @@ const AppLayout = (props) => {
                       Submit
                     </Button>
                   </Form>
+                  <p style = {{fontSize : "20px"}}>Upload Menu from .Csv file</p>
+                  <Button variant="warninig" onClick={() => showModal()}>
+                     Bulk Menu Upload
+                    </Button>
+                    <Modal show={modal} setModal = {()=>setModal(false)} modalBody={menuUpload()} uploadAll = {()=>uploadAll()}/>
                   <div className="menu-card-grid">
-                    {/* <------------- Cards Start ----------------> */}
-                    {/* {menu.map((item, index) => (
-                      <div class="ui card">
-                        <div class="content">
-                          <div style={{ float: "right" }}> */}
-                    {/* <DropdownButton id="dropdown-item-button" className="custome-class" title="" onClick = {(e)=>console.log("Toggle",e)}>
-                              <Dropdown.Item as="button">Available</Dropdown.Item>
-                              <Dropdown.Item as="button">Not Available</Dropdown.Item>
-                            </DropdownButton> */}
-                    {/* <Switch checked = {item.status == "Available"} size="small" onChange={(e)=>changeAvailability(e , item.status , item._id)}/> */}
-
-                    {/* </div>
-                          {item.name}
-                        </div>
-                        <div class="image">
-                          <img src={item.photo} />
-                        </div>
-                        <div class="content">
-                          <span class="right floated">
-                            <i class="rupee sign icon"></i>
-                            {item.price}
-                          </span> */}
-                    {/* <i class="list ul icon"></i> */}
-                    {/* {item.category}
-                        </div>
-                        <div class="extra content"> */}
-                    {/* <div class="ui large transparent left icon input"> */}
-                    {/* <i class="heart outline icon"></i>
-                     <input type="text" placeholder="Add Comment..."/> */}
-                    {/* <div class="ui bottom attached button" tabindex="0" onClick = {()=>deleteItem(item._id)} >
-                             Delete Item
-                            </div> */}
-                    {/* </div> */}
-                    {/* </div>
-                      </div>
-                    ))} */}
-
-                    {/* <---------------- start fake cards----------------> */}
+               
                     <Table responsive>
                       <thead>
                         <tr>
