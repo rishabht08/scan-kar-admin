@@ -29,7 +29,7 @@ let data = [
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={()=>props.uploadAll()}>Bulk Upload</Button>
+      <Button variant="primary" onClick={()=> props.uploadAll(!props.isEdit?"uploadAll":"isEdit")}>{!props.isEdit ? "Bulk Upload" : "Save"}</Button>
         </Modal.Footer>
       </Modal>
     )

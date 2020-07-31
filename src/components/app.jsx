@@ -29,6 +29,7 @@ import { Dropdown } from "semantic-ui-react";
 import Toggle from "react-toggle";
 import Modal from "../common/modal";
 
+
 const groupStyles = {
   display: "flex",
   alignItems: "center",
@@ -67,6 +68,10 @@ const AppLayout = (props) => {
   const [optionsValue, setOptions] = useState([]);
   const [modal, setModal] = useState(false);
   const [menuFile, setMenuFile] = useState(null);
+  const [editModal , setEditModal] = useState(false)
+  const [editName , setEditName] = useState("")
+  const [editPrice , setEditPrice] = useState("")
+  const [menuId , setMenuId] = useState(null)
 
   const options = [
     { value: "milkType", label: "milkType" },
@@ -254,7 +259,8 @@ const AppLayout = (props) => {
     );
   };
 
-  const uploadAll = () => {
+  const uploadAll = (type) => {
+    if(type=="uploadAll"){
     if (!menuFile) {
       alert("No CSV File Chosen");
       return;
@@ -292,7 +298,65 @@ const AppLayout = (props) => {
       }
       setModal(false);
     });
-  };
+  }
+  else{
+    Axios.patch(`https://scankar.herokuapp.com/api/v1/products/${menuId}` , {name:editName , price:editPrice}).then(res=>{
+      console.log("updated item" , res)
+      loadMenu();
+      setEditModal(false);
+      setModal(false)
+    })
+  }
+}
+
+  const editItem = (id , index)=>{
+    setEditModal(true);
+    setModal(true);
+    setMenuId(id)
+    setEditName(menu[index].name)
+    setEditPrice(menu[index].price)
+
+  }
+  const onModalInputChange = (e)=>{
+    if(e.target.name=="editName"){
+      setEditName(e.target.value);
+
+    }
+    else{
+      setEditPrice(e.target.value);
+    }
+  }
+
+  const editMenuItem = ()=>{
+    return(
+      <div>
+       
+        <Form.Group as={Col} controlId="formGridPassword">
+                          <Form.Label>Item Name</Form.Label>
+                          <Form.Control
+                            type="text"
+                            id="MenuName"
+                            placeholder="Enter price"
+                            onChange={onModalInputChange}
+                            value={editName}
+                            name = "editName"
+                          />
+                        </Form.Group>
+    
+        <Form.Group as={Col} controlId="formGridPassword">
+                          <Form.Label>Price</Form.Label>
+                          <Form.Control
+                            type="number"
+                            id="price"
+                            placeholder="Enter price"
+                            onChange={onModalInputChange}
+                            value={editPrice}
+                            name = "editPrice"
+                          />
+                        </Form.Group>
+      </div>
+    )
+  }
 
   return (
     // <Fragment>
@@ -451,11 +515,20 @@ const AppLayout = (props) => {
                     <Button variant="warninig" onClick={() => showModal()}>
                       Bulk Menu Upload
                     </Button>
+          
                     <Modal
                       show={modal}
-                      setModal={() => setModal(false)}
+                      isEdit={false}
+                      setModal={() => {setModal(false) ; setEditModal(false)}}
                       modalBody={menuUpload()}
-                      uploadAll={() => uploadAll()}
+                      uploadAll={(type) => uploadAll(type)}
+                    />
+                    <Modal
+                      show={editModal}
+                      isEdit={true}
+                      setModal={() => {setModal(false) ; setEditModal(false)}}
+                      modalBody={editMenuItem()}
+                      uploadAll={(type) => uploadAll(type)}
                     />
                     <div className="menu-card-grid">
                       <Table responsive>
@@ -466,6 +539,7 @@ const AppLayout = (props) => {
 
                             <th>Category</th>
                             <th>Availability</th>
+                            <th></th>
                             <th></th>
                           </tr>
                         </thead>
@@ -492,6 +566,13 @@ const AppLayout = (props) => {
                                   className="fa fa-trash fa-2x"
                                   aria-hidden="true"
                                   onClick={() => deleteItem(item._id)}
+                                ></i>
+                              </td>
+                              <td style={{ cursor: "pointer" }}>
+                                <i
+                                  className="fa fa-pencil-square-o fa-2x"
+                                  aria-hidden="true"
+                                  onClick={() => editItem(item._id , index)}
                                 ></i>
                               </td>
                             </tr>
