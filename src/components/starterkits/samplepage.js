@@ -109,7 +109,7 @@ const Samplepage = (props) => {
                       >
                         {localStorage.getItem('ownertype')!="hotelowner" ? order.orderType == "Dine In"
                           ? `Dinein / ${order.noOfSeatsRequested}`
-                          : "Take away" : `Room No/${order.noOfSeatsRequested}`}
+                          : "Take away" : `Room No/${order.noOfSeatsRequested + 100}`}
                       </a>
                       <h4><b>{order.userName ? order.userName : ""}</b></h4>
                       <h5>Ordered Items</h5>

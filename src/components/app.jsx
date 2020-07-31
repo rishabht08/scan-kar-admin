@@ -112,7 +112,8 @@ const AppLayout = (props) => {
     let doc = new jsPDF();
     doc.setFontSize(50);
     for (let i = 0; i < shop.seats; i++) {
-      doc.text(80, 220, "Table: " + (i + 1));
+     ( localStorage.getItem("ownertype") != "hotelowner" ? 
+      doc.text(80, 220, "Table: " + (i + 1)) : doc.text(80, 220, "Room: " + (i + 1 + 100)) )
       const qrCodeDataUri = qrCodeCanvas[i].toDataURL("image/jpg", 0.5);
 
       doc.addImage(qrCodeDataUri, "JPEG", 5, 0, 200, 200);
