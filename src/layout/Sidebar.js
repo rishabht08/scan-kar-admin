@@ -137,7 +137,7 @@ const Sidebar = () => {
                                     </a>
 
                                     }
-                                    {(menuItem.type === 'sub4') && <a style={{ marginTop: "28rem" }} className="sidebar-header" onClick={() => myApp.auth().signOut()}>
+                                    {(menuItem.type === 'sub4') && <a style={{ marginTop: "26rem" }} className="sidebar-header" onClick={() => {localStorage.clear();  window.location.reload();}}>
                                         <menuItem.icon />
                                         <span>{menuItem.title}</span>
                                         <i className="fa fa-angle-right pull-right"></i>

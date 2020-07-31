@@ -8,12 +8,15 @@ export const AuthProvider = ({ children }) => {
   const [pending, setPending] = useState(true);
 
   useEffect(() => {
-    myApp.auth().onAuthStateChanged((user) => {
-      setCurrentUser(user);
-      console.log("User" , user)
-      setPending(false);
-    });
-  }, []);
+    // myApp.auth().onAuthStateChanged((user) => {
+    //   setCurrentUser(user);
+    //   console.log("User" , user)
+    //   setPending(false);
+    // });
+    console.log("befor state" , localStorage.getItem('ownertype') )
+    setCurrentUser(localStorage.getItem('ownertype'));
+    setPending(false);
+  }, [setCurrentUser]);
 
   if (pending) {
     return <>Loading...</>;

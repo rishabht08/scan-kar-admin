@@ -19,9 +19,9 @@ const SignUp = ({ onSubmit }) => {
 
   
         <label for="type">Choose your Category</label><br></br><br></br>
-        <input type="radio" id="restaurant" name="type" value="restaurant"/>
+        <input type="radio" id="restaurantowner" name="type" value="returantowner"/>
           <label for="restaurant">Restaurant</label><br></br>
-            <input type="radio" id="hotel" name="type" value="hotel"/>
+            <input type="radio" id="hotelowner" name="type" value="hotelowner"/>
               <label for="hotel">Hotel</label><br></br>
      
 

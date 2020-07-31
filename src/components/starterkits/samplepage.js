@@ -107,9 +107,9 @@ const Samplepage = (props) => {
                         style={{ marginLeft: "15px" }}
                         class="ui orange right ribbon label s-c-custome"
                       >
-                        {order.orderType == "Dine In"
+                        {localStorage.getItem('ownertype')!="hotelowner" ? order.orderType == "Dine In"
                           ? `Dinein / ${order.noOfSeatsRequested}`
-                          : "Take away"}
+                          : "Take away" : `Room No/${order.noOfSeatsRequested}`}
                       </a>
                       <h4><b>{order.userName ? order.userName : ""}</b></h4>
                       <h5>Ordered Items</h5>
