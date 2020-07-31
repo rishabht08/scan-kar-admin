@@ -15,11 +15,17 @@ export const MENUITEMS = [
         title: 'Menu', icon:PlusCircle , type: 'sub3', active: false, path: `${process.env.PUBLIC_URL}/addmenu`
           
     },
+    {
+        title: 'POS', icon:LogOut , type: 'sub5', active: false, path: `${process.env.PUBLIC_URL}`
+          
+    },
 
     {
         title: 'Sign Out', icon:LogOut , type: 'sub4', active: false, path: `${process.env.PUBLIC_URL}`
           
     },
+
+   
     // {
     //     title: 'Support', icon:Headphones,type: 'sub',active: false, children: [
     //         {  path: 'http://support.pixelstrap.com/help-center', title: 'Raise Ticket', type: 'exteral_link', },

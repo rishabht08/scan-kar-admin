@@ -1,10 +1,10 @@
 
 import React, { Fragment, useState, useEffect } from 'react';
-import {useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
 import logo_compact from '../assets/images/scan-kar-logo.png';
 import logo_light from '../assets/images/scan-kar-logo.png'
 import { MENUITEMS } from './sidebar/menu';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import configDB from '../data/customizer/config';
 import myApp from "../FirebaseConfig"
 
@@ -24,11 +24,11 @@ const Sidebar = () => {
                     setNavActive(subItems)
                 if (!subItems.children) return false
                 subItems.children.filter(subSubItems => {
-                    if (subSubItems.path === currentUrl){
+                    if (subSubItems.path === currentUrl) {
                         setNavActive(subSubItems)
                         return true
                     }
-                    else{
+                    else {
                         return false
                     }
                 })
@@ -53,7 +53,7 @@ const Sidebar = () => {
                         submenuItems.active = true
                         return true
                     }
-                    else{
+                    else {
                         return false
                     }
                 })
@@ -65,7 +65,7 @@ const Sidebar = () => {
     }
 
     // Click Toggle menu
-    const toggletNavActive = (item) => {        
+    const toggletNavActive = (item) => {
         if (!item.active) {
             MENUITEMS.forEach(a => {
                 if (MENUITEMS.includes(item))
@@ -88,57 +88,66 @@ const Sidebar = () => {
         setMainMenu({ mainmenu: MENUITEMS })
     }
 
-  
+
     return (
         <Fragment>
-            <div className={`page-sidebar ${switchToggle? 'open': sidebar_background_color}`}>
-                <div className="main-header-left d-none d-lg-block" style={{padding: '0px'}}>
+            <div className={`page-sidebar ${switchToggle ? 'open' : sidebar_background_color}`}>
+                <div className="main-header-left d-none d-lg-block" style={{ padding: '0px' }}>
                     <div className="logo-wrapper compactLogo">
                         <Link to={`${process.env.PUBLIC_URL}/starter-kit/sample-page`}>
-                            <img className="blur-up lazyloaded light" src={logo_light}  alt="" />
-                            <img style={{marginTop: '0rem'}} className="blur-up lazyloaded compactlogo" src={logo_compact}  alt="" />
+                            <img className="blur-up lazyloaded light" src={logo_light} alt="" />
+                            <img style={{ marginTop: '0rem' }} className="blur-up lazyloaded compactlogo" src={logo_compact} alt="" />
                             {/* <img className="blur-up lazyloaded logo" src={logo}  alt="" /> */}
                         </Link>
                     </div>
                 </div>
                 <div className="sidebar custom-scrollbar">
                     <ul className="sidebar-menu">
-                         {
-                            MENUITEMS.map((menuItem, i) => 
-                               
+                        {
+                            MENUITEMS.map((menuItem, i) =>
+
                                 <li className={`${menuItem.active ? 'active' : ''}`} key={i}>
                                     {(menuItem.sidebartitle) ? <div className="sidebar-title">{menuItem.sidebartitle}</div>
                                         : ''}
                                     {(menuItem.type === 'sub') &&
                                         <a className="sidebar-header" href="/" onClick={() => toggletNavActive(menuItem)}>
                                             <menuItem.icon />
-                                    <span>{menuItem.title}</span>
+                                            <span>{menuItem.title}</span>
                                             <i className="fa fa-angle-right pull-right"></i>
                                         </a>}
-                                        { (menuItem.type === 'sub2') && <a className="sidebar-header" href="/generate" onClick={() => toggletNavActive(menuItem)}>
+                                    {(menuItem.type === 'sub2') && <a className="sidebar-header" href="/generate" onClick={() => toggletNavActive(menuItem)}>
                                         <menuItem.icon />
-                                <span>{menuItem.title}</span>
+                                        <span>{menuItem.title}</span>
                                         <i className="fa fa-angle-right pull-right"></i>
                                     </a>
-                                    
+
                                     }
-                                      { (menuItem.type === 'sub3') && <a className="sidebar-header" href="/addmenu" onClick={() => toggletNavActive(menuItem)}>
+                                    {(menuItem.type === 'sub3') && <a className="sidebar-header" href="/addmenu" onClick={() => toggletNavActive(menuItem)}>
                                         <menuItem.icon />
-                                <span>{menuItem.title}</span>
+                                        <span>{menuItem.title}</span>
                                         <i className="fa fa-angle-right pull-right"></i>
                                     </a>
-                                    
+
                                     }
-                                    { (menuItem.type === 'sub4') && <a style={{marginTop:"28rem"}} className="sidebar-header" onClick={() => myApp.auth().signOut()}>
+                                    
+                                    {(menuItem.type === 'sub5') && <a  className="sidebar-header"  href="http://doorsoft.xyz/demo/irestora_plus_multi_outlet/Outlet/outlets.html" target="_blank">
                                         <menuItem.icon />
-                                <span>{menuItem.title}</span>
+                                        <span>{menuItem.title}</span>
                                         <i className="fa fa-angle-right pull-right"></i>
                                     </a>
-                                    
+
+                                    }
+                                    {(menuItem.type === 'sub4') && <a style={{ marginTop: "28rem" }} className="sidebar-header" onClick={() => myApp.auth().signOut()}>
+                                        <menuItem.icon />
+                                        <span>{menuItem.title}</span>
+                                        <i className="fa fa-angle-right pull-right"></i>
+                                    </a>
+
                                     }
 
+
                                     {(menuItem.type === 'link') ?
-                                        <Link className={`sidebar-header ${menuItem.active ? 'active' :''}`}  onClick={() => toggletNavActive(menuItem)} to={menuItem.path}>
+                                        <Link className={`sidebar-header ${menuItem.active ? 'active' : ''}`} onClick={() => toggletNavActive(menuItem)} to={menuItem.path}>
                                             <menuItem.icon /><span>{menuItem.title}</span>
                                             {menuItem.children ?
                                                 <i className="fa fa-angle-right pull-right"></i> : ''}
@@ -161,19 +170,19 @@ const Sidebar = () => {
                                                             <i className="fa fa-circle"></i>{childrenItem.title}
                                                         </Link>
                                                         : ''}
-                                                     {(childrenItem.type === 'exteral_link') ?                      
-                                                        <a href={childrenItem.path}  className={childrenItem.active ? 'active' : ''} >{childrenItem.title}</a>
+                                                    {(childrenItem.type === 'exteral_link') ?
+                                                        <a href={childrenItem.path} className={childrenItem.active ? 'active' : ''} >{childrenItem.title}</a>
                                                         : ''}
                                                 </li>
                                             )}
-                                            
+
                                         </ul>
-                                        : ''}   
+                                        : ''}
                                 </li>
 
                             )
                         }
-                   </ul>
+                    </ul>
                 </div>
             </div>
         </Fragment>
