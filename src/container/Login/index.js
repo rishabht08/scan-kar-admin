@@ -25,6 +25,7 @@ const Login = ({ history }) => {
           if (res.status == 200) {
             localStorage.setItem('ownertype', res.data.user.ownerType);
                localStorage.setItem('token', res.data.token);
+               localStorage.setItem('userid', res.data.user._id);
             // history.push("/")
             window.location.reload();
           }
@@ -62,6 +63,7 @@ const Login = ({ history }) => {
           if(res.status==200){
             localStorage.setItem('ownertype', res.data.user.ownerType);
                localStorage.setItem('token', res.data.token);
+               localStorage.setItem('userid', res.data.user._id);
             // history.push("/")
             window.location.reload();
 

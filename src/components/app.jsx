@@ -419,13 +419,13 @@ const AppLayout = (props) => {
                     <div style={{ opacity: 0 }}>
                       {seats.map((x) => (
                         <QRCode
-                          value={`https://scankar.netlify.app/${shop.id}T${x}`}
+                          value={`https://scankar.netlify.app/${localStorage.getItem("userid")}T${x}`}
                           size={200}
                         />
                       ))}
 
                       <QRCode
-                        value={`https://scankar.netlify.app/${shop.id}take`}
+                        value={`https://scankar.netlify.app/${localStorage.getItem("userid")}take`}
                         size={200}
                       />
                     </div>
