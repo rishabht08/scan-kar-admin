@@ -20,10 +20,11 @@ const Login = ({ history }) => {
         //   .auth()
         //   .signInWithEmailAndPassword(email.value, password.value);
         // history.push('/');
-        axios.post("https://scankar.herokuapp.com/api/v1/adminLogin", { email: email.value, password: password.value }).then(res => {
+        axios.post("https://scankarapi.herokuapp.com/api/v1/adminLogin", { email: email.value, password: password.value }).then(res => {
           console.log("login success", res)
           if (res.status == 200) {
             localStorage.setItem('ownertype', res.data.user.ownerType);
+               localStorage.setItem('token', res.data.token);
             // history.push("/")
             window.location.reload();
           }
@@ -56,10 +57,11 @@ const Login = ({ history }) => {
           "role": "admin",
           "mobileNumber": mobNo.toString()
         }
-        axios.post("https://scankar.herokuapp.com/api/v1/register" , data).then(res=>{
+        axios.post("https://scankarapi.herokuapp.com/api/v1/register" , data).then(res=>{
           console.log("signup reponse" , res)
           if(res.status==200){
             localStorage.setItem('ownertype', res.data.user.ownerType);
+               localStorage.setItem('token', res.data.token);
             // history.push("/")
             window.location.reload();
 

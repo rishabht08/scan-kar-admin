@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
     //   setPending(false);
     // });
     console.log("befor state" , localStorage.getItem('ownertype') )
-    setCurrentUser(localStorage.getItem('ownertype'));
+    setCurrentUser(localStorage.getItem('token'));
     setPending(false);
   }, [setCurrentUser]);
 

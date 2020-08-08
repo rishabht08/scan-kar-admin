@@ -20,7 +20,7 @@ const Common = (state = Initial_state, action) => {
     switch (action.type) {
         // case GET_ORDERS:
 
-        //     return axios.get("https://scankar.herokuapp.com/api/v1/customer-order").then(res => {
+        //     return axios.get("https://scankarapi.herokuapp.com/api/v1/customer-order").then(res => {
 
         //         let pending = res.data.data.orders.filter(order => {
         //             return order.process == "Pending"
@@ -35,7 +35,7 @@ const Common = (state = Initial_state, action) => {
 
 
         // case RUNNING_ORDERS:
-        //     return axios.get("https://scankar.herokuapp.com/api/v1/customer-order").then(res => {
+        //     return axios.get("https://scankarapi.herokuapp.com/api/v1/customer-order").then(res => {
 
         //         let running = res.data.data.orders.filter(order => {
         //             return order.process == "Running"

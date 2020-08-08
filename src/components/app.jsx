@@ -48,6 +48,8 @@ const groupBadgeStyles = {
   textAlign: "center",
 };
 
+const header = { headers: { Authorization: `Bearer ${ localStorage.getItem('token')}` } }
+
 const formatGroupLabel = (data) => (
   <div style={groupStyles}>
     <span>{data.label}</span>
@@ -106,7 +108,8 @@ const AppLayout = (props) => {
   }, []);
 
   const loadMenu = () => {
-    Axios.get("https://scankar.herokuapp.com/api/v1/products").then((res) => {
+
+    Axios.get("https://scankarapi.herokuapp.com/api/v1/products" , header).then((res) => {
       setMenu(res.data.data.products.reverse());
     });
   };
@@ -188,7 +191,7 @@ const AppLayout = (props) => {
     data.append("price", price);
     data.append("resturant_id", "RES77110");
     data.append("options", optionsValue);
-    Axios.post("https://scankar.herokuapp.com/api/v1/products", data).then(
+    Axios.post("https://scankarapi.herokuapp.com/api/v1/products", data , header).then(
       (resp) => {
         if ((resp.data.status = "Success")) {
           swal("Added!", "Menu Item Succesfully Added", "success").then(() => {
@@ -213,24 +216,24 @@ const AppLayout = (props) => {
         dangerMode: true,
       }).then((willDelete) => {
         if (willDelete) {
-          Axios.patch(`https://scankar.herokuapp.com/api/v1/products/${id}`, {
+          Axios.patch(`https://scankarapi.herokuapp.com/api/v1/products/${id}`, {
             status: "unAvailable",
-          }).then(() => {
+          } , header).then(() => {
             loadMenu();
           });
         }
       });
     } else {
-      Axios.patch(`https://scankar.herokuapp.com/api/v1/products/${id}`, {
+      Axios.patch(`https://scankarapi.herokuapp.com/api/v1/products/${id}`, {
         status: "Available",
-      }).then(() => {
+      } , header).then(() => {
         loadMenu();
       });
     }
   };
 
   const deleteItem = (id) => {
-    Axios.delete(`https://scankar.herokuapp.com/api/v1/products/${id}`).then(
+    Axios.delete(`https://scankarapi.herokuapp.com/api/v1/products/${id}` , header).then(
       () => {
         loadMenu();
       }
@@ -289,8 +292,8 @@ const AppLayout = (props) => {
           data = {};
         });
         Axios.post(
-          "https://scankar.herokuapp.com/api/v1/products/uploadinbulk",
-          { products }
+          "https://scankarapi.herokuapp.com/api/v1/products/uploadinbulk",
+          { products } , header
         ).then((res) => {
           console.log("Bul uploaded", res);
           loadMenu();
@@ -300,7 +303,7 @@ const AppLayout = (props) => {
     });
   }
   else{
-    Axios.patch(`https://scankar.herokuapp.com/api/v1/products/${menuId}` , {name:editName , price:editPrice}).then(res=>{
+    Axios.patch(`https://scankarapi.herokuapp.com/api/v1/products/${menuId}` , {name:editName , price:editPrice}).then(res=>{
       console.log("updated item" , res)
       loadMenu();
       setEditModal(false);

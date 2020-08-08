@@ -38,7 +38,7 @@ const Samplepage = (props) => {
 
     axios
       .patch(
-        `https://scankar.herokuapp.com/api/v1/customer-order/update-order/${id}`,
+        `https://scankarapi.herokuapp.com/api/v1/customer-order/update-order/${id}`,
         { process: process }
       )
       .then((resp) => {
