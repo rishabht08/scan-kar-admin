@@ -1,7 +1,8 @@
 import axios from "axios";
+const header = { headers: { Authorization: `Bearer ${ localStorage.getItem('token')}` } }
 
 export async function addOrders(type) {
-    return axios.get("https://scankarapi.herokuapp.com/api/v1/customer-order").then(res => {
+    return axios.get("https://scankarapi.herokuapp.com/api/v1/customer-order" , header).then(res => {
         let arr = []
         switch(type){
           case "Running":
@@ -27,7 +28,7 @@ export async function addOrders(type) {
 }
 
 export async function calculateSales() {
-    return axios.get("https://scankarapi.herokuapp.com/api/v1/customer-order").then(res => {
+    return axios.get("https://scankarapi.herokuapp.com/api/v1/customer-order" ,header).then(res => {
         let arr = res.data.data.orders;
         let state = {}
         let dineIn = arr.filter(order => {
